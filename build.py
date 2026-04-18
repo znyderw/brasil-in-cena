@@ -17,7 +17,7 @@ def gerar_site():
         dados_regioes = json.load(f)
     env = Environment(loader=FileSystemLoader(template_dir, encoding='utf-8'))
     template_index = env.get_template('index.html')
-    html_index = template_index.render(root_path="")
+    html_index = template_index.render(root_path="./")
     html_index = minify_html(fix_lazy_images(html_index))
     with open(os.path.join(output_dir_root, 'index.html'), "w", encoding='utf-8') as f:
         f.write(html_index)
