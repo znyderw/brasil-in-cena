@@ -4,20 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Região Norte | Brasil in Cena</title>
-    <!-- CSS Relativo Consistente (Otimizado via root_path) -->
     <link rel="stylesheet" href="../../../src/assets/styles/css/style.css">
-    
-    <!-- FontAwesome para icones -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Modern Fonts: Poppins (Destaque) & Inter (Texto Básico) -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Script de Animação de Entrada ScrollReveal -->
     <script src="https://unpkg.com/scrollreveal"></script>
-
     <style>
-
         :root {
             --bg-color: #f7f9fc;
             --text-main: #1a202c;
@@ -26,10 +17,9 @@
             --font-inter: 'Inter', sans-serif;
             --font-poppins: 'Poppins', sans-serif;
             --tema-cor: #2F855A;
-            --tema-cor-glass: #2F855A33; /* 20% opacity */
-            --tema-cor-scrolled: #2F855AF0; /* 94% opacity */
+            --tema-cor-glass: #2F855A33;
+            --tema-cor-scrolled: #2F855AF0;
         }
-
         body {
             font-family: var(--font-inter);
             background-color: var(--bg-color);
@@ -38,13 +28,9 @@
             padding: 0;
             line-height: 1.6;
         }
-
-        /* Títulos Globais e Elementos de Destaque */
         h1, h2, h3, .poppins-text {
             font-family: var(--font-poppins);
         }
-
-        /* HEADER DYNAMIC OVERRIDE: Fixo, Invisivel até rolagem */
         header { 
             position: fixed !important;
             top: 0;
@@ -56,18 +42,14 @@
             box-shadow: none !important;
             border-bottom: 1px solid transparent;
         }
-        
-        /* Links da Navbar na fase flutuante transparente */
         #nav_list .nav-item a, #nav_logo {
             color: #ffffff !important;
             text-shadow: 0px 2px 4px rgba(0,0,0,0.5);
             transition: color 0.3s;
         }
-        
         #nav_list .nav-item a:hover {
             color: var(--tema-cor) !important;
         }
-
         header.scrolled {
             background-color: var(--tema-cor-scrolled) !important;
             backdrop-filter: blur(40px);
@@ -75,47 +57,40 @@
             border-bottom: 1px solid rgba(255,255,255,0.3);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important;
         }
-
         .hero {
             position: relative;
-            height: 100vh; /* Full screen */
+            height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             background-size: cover;
             background-position: center;
-            background-attachment: fixed; /* Efeito Parallax sutil */
+            background-attachment: fixed;
             color: white;
             padding: 0 20px;
         }
-        
         .hero::before {
             content: '';
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
             background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.9) 100%);
         }
-
         .hero-content {
             position: relative;
             z-index: 2;
             max-width: 900px;
         }
-
         .hero h1 {
             font-size: 4.5rem;
             margin: 0.5rem 0;
             letter-spacing: -2px;
             text-transform: uppercase;
         }
-        
         .hero p {
             font-size: 1.25rem;
             color: rgba(255,255,255,0.85);
         }
-
-        /* Layout Limits */
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -123,15 +98,12 @@
             position: relative;
             z-index: 3;
         }
-
-
         .dashboard-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 1.5rem;
-            margin-top: -5rem; /* Sobe para cruzar a linha do Hero */
+            margin-top: -5rem;
         }
-
         .stat-card {
             background: var(--tema-cor);
             padding: 1.5rem;
@@ -142,38 +114,30 @@
             color: #ffffff;
             transition: transform 0.3s, box-shadow 0.3s;
         }
-        
         .stat-card:hover {
             transform: translateY(-5px);
         }
-
         .stat-card i {
             font-size: 2rem;
-            color: #ffffff; /* Simplificado minimalista */
+            color: #ffffff;
             margin-bottom: 1rem;
             opacity: 0.9;
         }
-
         .stat-card h3 { margin: 0; font-size: 1rem; color: rgba(255,255,255,0.7); text-transform: uppercase; letter-spacing: 1px;}
         .stat-card p { margin: 5px 0 0; font-weight: 700; font-size: 1.25rem; font-family: var(--font-inter); }
-
-
         section {
             margin: 5rem 0;
         }
-
         .section-header {
             text-align: center;
             margin-bottom: 3rem;
             color: var(--text-main);
         }
-        
         .section-header h2 {
             font-size: 2.5rem;
             position: relative;
             display: inline-block;
         }
-        
         .section-header h2::after {
             content: '';
             position: absolute;
@@ -184,21 +148,16 @@
             left: 25%;
             border-radius: 2px;
         }
-
-
         .grid-triptych {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 1.5rem;
         }
-
-        /* Responsividade para Triptych */
         @media (max-width: 900px) {
             .grid-triptych {
                 grid-template-columns: 1fr;
             }
         }
-
         .gallery-card {
             background: #000;
             border-radius: 12px;
@@ -207,7 +166,6 @@
             height: 600px;
             cursor: pointer;
         }
-
         .gallery-card img {
             width: 100%;
             height: 100%;
@@ -216,11 +174,9 @@
             transition: transform 0.6s ease, opacity 0.6s ease;
             opacity: 0.85;
         }
-
         .gallery-card:hover img {
             transform: scale(1.05);
         }
-
         .gallery-card .card-content {
             position: absolute;
             bottom: 0; left: 0; right: 0;
@@ -231,18 +187,14 @@
             transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             text-align: center;
         }
-
         .gallery-card:hover .card-content {
             transform: translateY(0);
         }
-
-
         .grid-cards {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 2rem;
         }
-        
         .recipe-card {
             background: var(--card-bg);
             border-radius: 16px;
@@ -251,21 +203,17 @@
             border: 1px solid rgba(0,0,0,0.03);
             transition: transform 0.3s ease;
         }
-        
         .recipe-card:hover {
             transform: translateY(-8px);
         }
-
         .recipe-card img {
             width: 100%;
             height: 240px;
             object-fit: cover;
         }
-
         .recipe-card .card-content {
             padding: 2rem;
         }
-        
         .recipe-card h3 {
             color: var(--tema-cor);
             font-size: 1.4rem;
@@ -274,13 +222,11 @@
             align-items: center;
             gap: 10px;
         }
-        
         .recipe-card .descricao {
             color: var(--text-muted);
             font-size: 0.95rem;
             margin: 1rem 0;
         }
-
         .btn {
             display: inline-block;
             background: var(--tema-cor);
@@ -295,41 +241,33 @@
             border: none;
             cursor: pointer;
         }
-
         .btn:hover {
             opacity: 0.9;
             transform: scale(1.02);
         }
-
         .video-container {
             position: relative;
-            padding-bottom: 56.25%; /* 16:9 */
+            padding-bottom: 56.25%;
             height: 0;
             overflow: hidden;
             border-radius: 16px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
-
         .video-container iframe {
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
             border: 0;
         }
-
-        /* Typography Conteudo Base */
         .conteudo-base {
             max-width: 800px;
             margin: 0 auto;
             text-align: justify;
         }
-        
         .conteudo-base p {
             font-size: 1.1rem;
             margin-bottom: 1.5rem;
             color: var(--text-muted);
         }
-
-
         .badge-list {
             display: flex;
             flex-wrap: wrap;
@@ -337,7 +275,6 @@
             justify-content: center;
             margin-top: 1.5rem;
         }
-
         .badge {
             background: transparent;
             padding: 8px 20px;
@@ -351,8 +288,6 @@
     </style>
 </head>
 <body>
-
-
         <header>
         <nav id="navbar">
             <img src="../../../src/assets/styles/img/logoo.png" alt="Brasil In Cena" id="nav_logo">
@@ -397,8 +332,6 @@
             </ul>
         </div>
     </header>
-
-
     <div class="hero render-anim-top" style="background-image: url('https://images.unsplash.com/photo-1581452684877-6262b9a7b93a?q=80&w=2940&auto=format&fit=crop');">
         <div class="hero-content">
             <p class="poppins-text" style="font-size: 1.2rem; text-transform: uppercase; letter-spacing: 2px; color: var(--tema-cor);">Conheça também a</p>
@@ -406,9 +339,7 @@
             <p>A região mais selvagem e exuberante do país. O pulmão verde que conecta a imensidão da Floresta Amazônica com saberes milenares.</p>
         </div>
     </div>
-
     <main class="container">
-
         <section id="dashboard" class="dashboard-grid render-anim">
             <div class="stat-card">
                 <i class="fa-solid fa-map"></i>
@@ -426,13 +357,10 @@
                 <p>Abriga a maior floresta tropical do mundo.</p>
             </div>
         </section>
-
-
         <section class="render-anim conteudo-base">
             <div class="section-header">
                 <h2>Saiba Mais</h2>
             </div>
-            
             
                 <div>
                    
@@ -442,7 +370,6 @@
                    
                 </div>
             
-
             
                 <div style="margin-top: 2rem;">
                    <h3 class="poppins-text" style="color: var(--text-main);">Geografia</h3>
@@ -470,7 +397,6 @@
                 </div>
             
             
-            
                 <div style="margin-top: 2rem;">
                    <h3 class="poppins-text" style="color: var(--text-main);">Cultura</h3>
                    
@@ -479,7 +405,6 @@
                        <p>Destaca-se o uso de folhas e chás medicinais nativos. O carimbó é a manifestação rítmica popular, e o artesanato incorpora sementes, palha, penas e barro marajoara.</p>
                    
                 </div>
-            
             
             
                 <div style="margin-top: 2rem;">
@@ -491,7 +416,6 @@
                    
                 </div>
             
-
             <div class="mt-4" style="text-align: center;">
                 <h3 class="poppins-text" style="color: var(--text-main);">Estados Integrantes</h3>
                 <div class="badge-list">
@@ -513,8 +437,6 @@
                 </div>
             </div>
         </section>
-
-
         
         <section class="render-anim">
             <div class="section-header">
@@ -546,13 +468,10 @@
             </div>
         </section>
         
-
-
         <section class="render-anim">
             <div class="section-header">
                 <h2>Exploração Cultural</h2>
             </div>
-            
             
                 <div class="grid-cards">
                     
@@ -560,9 +479,7 @@
                         <img src="https://images.unsplash.com/photo-1588661621379-91ee0b938550?auto=format&fit=crop&w=800&q=80" alt="Tacacá" loading="lazy" onerror="this.onerror=null; this.src='../../../src/assets/styles/img/brasil1.png';">
                         <div class="card-content">
                             <h3><i class="fa-solid fa-bowl-food"></i> Tacacá</h3>
-
                             <div class="descricao">A iguaria indígena quente e intensa feita de tucupi (caldo amarelo da mandioca), goma de tapioca, jambu (a erva que adormece os lábios) e camarão seco.</div>
-                            
                             
                                 <a href="https://www.tudogostoso.com.br/busca?q=tacaca" target="_blank" class="btn"><i class="fa-solid fa-arrow-up-right-from-square"></i> Cultura Gastronômica</a>
                             
@@ -573,9 +490,7 @@
                         <img src="https://images.unsplash.com/photo-1548405021-399cc11b22e1?auto=format&fit=crop&w=800&q=80" alt="Maniçoba" loading="lazy" onerror="this.onerror=null; this.src='../../../src/assets/styles/img/brasil1.png';">
                         <div class="card-content">
                             <h3><i class="fa-solid fa-leaf"></i> Maniçoba</h3>
-
                             <div class="descricao">Conhecida como a feijoada sem feijão. É produzida com folhas de mandioca brava (maniva) cozidas por dias para retirar sua toxicidade, servida com arroz.</div>
-                            
                             
                                 <a href="https://www.tudogostoso.com.br/busca?q=manicoba" target="_blank" class="btn"><i class="fa-solid fa-arrow-up-right-from-square"></i> Cultura Gastronômica</a>
                             
@@ -583,13 +498,11 @@
                     </div>
                     
                     
-                    
                     <div class="recipe-card">
                         <img src="https://images.unsplash.com/photo-1516086749007-df0bc3c8b417?auto=format&fit=crop&w=800&q=80" alt="Guarana" loading="lazy" onerror="this.onerror=null; this.src='../../../src/assets/styles/img/brasil1.png';">
                         <div class="card-content">
                             <h3><i class="fa-solid fa-glass-water"></i> Guaraná da Amazônia</h3>
                             <div class="descricao">A versão energética nativa e concentrada, popular para repor as energias com vitalidade natural.</div>
-                            
                             
                                 <a href="https://www.tudogostoso.com.br/busca?q=guarana+da+amazonia" target="_blank" class="btn"><i class="fa-solid fa-arrow-up-right-from-square"></i> Explorar Item</a>
                             
@@ -602,7 +515,6 @@
                             <h3><i class="fa-solid fa-bottle-droplet"></i> Suco de Bacuri</h3>
                             <div class="descricao">Suco preparado com a polpa doce e perfumada do Bacuri maduro; garante grande complexidade de sabor no paladar amazônico.</div>
                             
-                            
                                 <a href="https://www.tudogostoso.com.br/busca?q=suco+de+bacuri" target="_blank" class="btn"><i class="fa-solid fa-arrow-up-right-from-square"></i> Explorar Item</a>
                             
                         </div>
@@ -611,12 +523,8 @@
                 </div>
             
         </section>
-
-
         
-
     </main>
-
     <footer style="margin-top: 4rem;">
         <div id="footer_items">
             <span id="copyright" style="display:block; text-align:center; padding: 30px; color: var(--text-muted); border-top: 1px solid rgba(0,0,0,0.05); font-family: var(--font-poppins);">
@@ -624,30 +532,23 @@
             </span>
         </div>
     </footer>
-
     <script>
-        // Navegação Sticky Imersiva Color Sync
         const header = document.querySelector('header');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 150) {
                 header.classList.add('scrolled');
-                // Retorna texto do mainnav a cor forte original ou branca limpa
             } else {
                 header.classList.remove('scrolled');
             }
         });
-
-        // Init ScrollReveal para animacoes fluidas
         const sr = ScrollReveal({
             distance: '60px',
             duration: 1000,
             easing: 'cubic-bezier(0.5, 0, 0, 1)',
             reset: false
         });
-        
         sr.reveal('.render-anim', { delay: 100, origin: 'bottom', scale: 0.98 });
         sr.reveal('.render-anim-top', { delay: 100, origin: 'top', distance: '40px' });
-        // Cards entram em cena em série, suavemente
         sr.reveal('.stat-card', { interval: 150, origin: 'bottom', scale: 0.95 });
         sr.reveal('.gallery-card', { interval: 200, origin: 'bottom', distance: '80px' });
         sr.reveal('.recipe-card', { interval: 200, origin: 'bottom', scale: 0.95 });
