@@ -1,1 +1,664 @@
-<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Região Nordeste | Brasil in Cena</title><link rel="stylesheet" href="../../../src/assets/styles/css/style.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet"><script src="https://unpkg.com/scrollreveal"></script><style> /* Embed inline essentials para Fallback e Componentes UI */ :root { --bg-color: #f7f9fc; --text-main: #1a202c; --text-muted: #4a5568; --card-bg: #ffffff; --font-inter: 'Inter', sans-serif; --font-poppins: 'Poppins', sans-serif; --tema-cor: #DD6B20; --tema-cor-glass: #DD6B2033; /* 20% opacity */ --tema-cor-scrolled: #DD6B20F0; /* 94% opacity */ } body { font-family: var(--font-inter); background-color: var(--bg-color); color: var(--text-main); margin: 0; padding: 0; line-height: 1.6; } /* Títulos Globais e Elementos de Destaque */ h1, h2, h3, .poppins-text { font-family: var(--font-poppins); } /* HEADER DYNAMIC OVERRIDE: Fixo, Invisivel até rolagem */ header { position: fixed !important; top: 0; left: 0; width: 100%; z-index: 1000 !important; background-color: transparent !important; transition: background-color 0.4s ease, backdrop-filter 0.4s ease, border-bottom 0.4s ease; box-shadow: none !important; border-bottom: 1px solid transparent; } /* Links da Navbar na fase flutuante transparente */ #nav_list .nav-item a, #nav_logo { color: #ffffff !important; text-shadow: 0px 2px 4px rgba(0,0,0,0.5); transition: color 0.3s; } #nav_list .nav-item a:hover { color: var(--tema-cor) !important; } header.scrolled { background-color: var(--tema-cor-scrolled) !important; backdrop-filter: blur(40px); -webkit-backdrop-filter: blur(40px); border-bottom: 1px solid rgba(255,255,255,0.3); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important; } /* Hero 100vh Imersivo */ .hero { position: relative; height: 100vh; /* Documentário Full Screen */ display: flex; align-items: center; justify-content: center; text-align: center; background-size: cover; background-position: center; background-attachment: fixed; /* Efeito Parallax sutil */ color: white; padding: 0 20px; } .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.9) 100%); } .hero-content { position: relative; z-index: 2; max-width: 900px; } .hero h1 { font-size: 4.5rem; margin: 0.5rem 0; letter-spacing: -2px; text-transform: uppercase; } .hero p { font-size: 1.25rem; color: rgba(255,255,255,0.85); } /* Layout Limits */ .container { max-width: 1200px; margin: 0 auto; padding: 2rem; position: relative; z-index: 3; } /* Dashboard Insight com Glassmorphism Dinâmico */ .dashboard-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: -5rem; /* Sobe para cruzar a linha do Hero */ } .stat-card { background: var(--tema-cor); padding: 1.5rem; border-radius: 16px; box-shadow: 0 8px 32px rgba(0,0,0,0.15); text-align: center; border: 1px solid rgba(255,255,255,0.1); color: #ffffff; transition: transform 0.3s, box-shadow 0.3s; } .stat-card:hover { transform: translateY(-5px); } .stat-card i { font-size: 2rem; color: #ffffff; /* Simplificado minimalista */ margin-bottom: 1rem; opacity: 0.9; } .stat-card h3 { margin: 0; font-size: 1rem; color: rgba(255,255,255,0.7); text-transform: uppercase; letter-spacing: 1px;} .stat-card p { margin: 5px 0 0; font-weight: 700; font-size: 1.25rem; font-family: var(--font-inter); } /* Sections Globais */ section { margin: 5rem 0; } .section-header { text-align: center; margin-bottom: 3rem; color: var(--text-main); } .section-header h2 { font-size: 2.5rem; position: relative; display: inline-block; } .section-header h2::after { content: ''; position: absolute; width: 50%; height: 4px; background-color: var(--tema-cor); bottom: -10px; left: 25%; border-radius: 2px; } /* GALERIA TRIPTYCH VETICAL */ .grid-triptych { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; } /* Responsividade para Triptych */ @media (max-width: 900px) { .grid-triptych { grid-template-columns: 1fr; } } .gallery-card { background: #000; border-radius: 12px; overflow: hidden; position: relative; height: 600px; cursor: pointer; } .gallery-card img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.6s ease, opacity 0.6s ease; opacity: 0.85; } .gallery-card:hover img { transform: scale(1.05); } .gallery-card .card-content { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.9), transparent); color: white; padding: 2rem 1.5rem 1.5rem 1.5rem; transform: translateY(100%); transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); text-align: center; } .gallery-card:hover .card-content { transform: translateY(0); } /* Culinária Escaneável */ .grid-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; } .recipe-card { background: var(--card-bg); border-radius: 16px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 1px solid rgba(0,0,0,0.03); transition: transform 0.3s ease; } .recipe-card:hover { transform: translateY(-8px); } .recipe-card img { width: 100%; height: 240px; object-fit: cover; } .recipe-card .card-content { padding: 2rem; } .recipe-card h3 { color: var(--tema-cor); font-size: 1.4rem; margin-top: 0; display: flex; align-items: center; gap: 10px; } .recipe-card .descricao { color: var(--text-muted); font-size: 0.95rem; margin: 1rem 0; } .btn { display: inline-block; background: var(--tema-cor); color: white; text-decoration: none; padding: 12px 24px; border-radius: 8px; margin-top: 1rem; font-weight: 600; font-family: var(--font-poppins); transition: opacity 0.2s, transform 0.2s; border: none; cursor: pointer; } .btn:hover { opacity: 0.9; transform: scale(1.02); } .video-container { position: relative; padding-bottom: 56.25%; /* 16:9 */ height: 0; overflow: hidden; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); } .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; } /* Typography Conteudo Base */ .conteudo-base { max-width: 800px; margin: 0 auto; text-align: justify; } .conteudo-base p { font-size: 1.1rem; margin-bottom: 1.5rem; color: var(--text-muted); } /* Listas de Estados Minimalistas */ .badge-list { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 1.5rem; } .badge { background: transparent; padding: 8px 20px; border-radius: 30px; font-size: 0.9rem; color: var(--tema-cor); font-weight: 600; border: 2px solid var(--tema-cor); font-family: var(--font-poppins); } </style></head><body><header><nav id="navbar"><img loading="lazy" src="../../../src/assets/styles/img/logoo.png" alt="Brasil In Cena" id="nav_logo"><ul id="nav_list"><li class="nav-item"><a href="../../../index.html">Início</a><ul class="nav-menu"><li><a href="../../../src/assets/pages/sul.html">Região Sul</a></li><li><a href="../../../src/assets/pages/norte.html">Região Norte</a></li><li><a href="../../../src/assets/pages/centro-oeste.html">Região Centro-Oeste</a></li><li><a href="../../../src/assets/pages/nordeste.html">Região Nordeste</a></li><li><a href="../../../src/assets/pages/sudeste.html">Região Sudeste</a></li></ul></li><li class="nav-item"><a href="../../../src/assets/pages/sobre.html">Sobre Nós</a></li><li class="nav-item"><a href="../../../src/assets/pages/contato.html">Contato</a></li></ul><a href='../../../index.html#menu' class="btn-default-link"><button class="btn-default">Regiões</button></a><button id="mobile_btn"><i class="fa-solid fa-bars"></i></button></nav><div id="mobile_menu"><ul id="mobile_nav_list"><li class="nav-item active"><a href="../../../index.html">Início</a></li><li class="nav-item"><a href="../../../src/assets/pages/sobre.html">Sobre Nós</a></li><li class="nav-item"><a href="../../../src/assets/pages/contato.html">Contato</a></li></ul></div></header><div class="hero render-anim-top" style="background-image: url('https://images.unsplash.com/photo-1581452684877-6262b9a7b93a?q=80&w=2940&auto=format&fit=crop');"><div class="hero-content"><p class="poppins-text" style="font-size: 1.2rem; text-transform: uppercase; letter-spacing: 2px; color: var(--tema-cor);">Conheça também a</p><h1>Região Nordeste</h1><p>Onde o Brasil nasceu. Terra de sol incessante, praias paradisíacas e uma resistência cultural expressa em cada batuque.</p></div></div><main class="container"><section id="dashboard" class="dashboard-grid render-anim"><div class="stat-card"><i class="fa-solid fa-map"></i><h3>Estados</h3><p>9 Unidades</p></div><div class="stat-card"><i class="fa-solid fa-cloud-sun"></i><h3>Clima Típico</h3><p>Tropical e Semiárido</p></div><div class="stat-card"><i class="fa-solid fa-star"></i><h3>Destaque</h3><p>Maior extensão litorânea do país.</p></div></section><section class="render-anim conteudo-base"><div class="section-header"><h2>Saiba Mais</h2></div><div><p>O Nordeste obteve importância vital na formação do Brasil colonial. Foi perto de Porto Seguro (BA) que a esquadra portuguesa de fato aportou, fundando o que seria o início do Brasil em 1500.</p><p>A base de mão-de-obra escrava advinda da África solidificou uma mistura dolorosa que ergueu Salvador como primeira grande maravilha e capital, abarcando cultura iberica e indígena.</p></div><div style="margin-top: 2rem;"><h3 class="poppins-text" style="color: var(--text-main);">Geografia</h3><h4 style="color: var(--tema-cor); margin-top: 1rem;">Clima</h4><p>Tempos rigorosos de Seca marcam o Semiárido no Sertão (onde menos chove no Brasil). Porém, apresenta um clima Tropical litorâneo quente sem fim favorecendo os resorts.</p><h4 style="color: var(--tema-cor); margin-top: 1rem;">Relevo</h4><p>Destacam-se o Planalto da Borborema que age como barreira de chuvas provocando a seca nos sertões, as vastas depressões sertanejas, e falésias litorâneas exuberantes.</p><h4 style="color: var(--tema-cor); margin-top: 1rem;">Vegetação</h4><p>No litoral a resistente Mata Atlântica; cruzando pelo inóspito Agreste chegamos à Caatinga, adaptada para sobreviver guardando a pouca umidade provida.</p><h4 style="color: var(--tema-cor); margin-top: 1rem;">Hidrografia</h4><p>O Rio São Francisco é o rei e símbolo nordestino. Considerado o rio de integração nacional, é onde todos os ribeirinhos recorrem para o abastecimento.</p></div><div style="margin-top: 2rem;"><h3 class="poppins-text" style="color: var(--text-main);">Cultura</h3><p>Da Capoeira à rica Literatura de Cordel, passando pelas cantigas de repente: As tradições do berço nordestino exalam resistência e bom humor.</p><p>Uma imensa musicalidade abençoou a região com Frevo, axé, maracatu aos românticos xotes e forrós pé-de-serra.</p></div><div style="margin-top: 2rem;"><h3 class="poppins-text" style="color: var(--text-main);">Eventos Populares</h3><p>As Festas Juninas (Campina Grande e Caruaru): Reúnem verdadeiras cidades de palha onde centenas de milhares celebram o maior São João do Mundo em ritmo inigualavelmente animado.</p><p>Carnaval de Salvador e Olinda: A capital do axé contrasta com as ladeiras históricas de Olinda esbanjando um frevo de rua intenso.</p></div><div class="mt-4" style="text-align: center;"><h3 class="poppins-text" style="color: var(--text-main);">Estados Integrantes</h3><div class="badge-list"><span class="badge">Alagoas</span><span class="badge">Bahia</span><span class="badge">Ceará</span><span class="badge">Maranhão</span><span class="badge">Paraíba</span><span class="badge">Pernambuco</span><span class="badge">Piauí</span><span class="badge">Rio Grande do Norte</span><span class="badge">Sergipe</span></div></div></section><section class="render-anim"><div class="section-header"><h2>Experiência Visual</h2></div><div class="grid-triptych"><div class="gallery-card"><img src="https://images.unsplash.com/photo-1581452684877-6262b9a7b93a?q=80&w=2940&auto=format&fit=crop" alt="Pelourinho" loading="lazy" onerror="this.onerror=null; this.src='../../../src/assets/styles/img/brasil1.png';"><div class="card-content"><p class="poppins-text" style="font-size: 1.1rem; margin:0;"><strong>Lugar: Arquitetura histórica do Pelourinho, Bahia</strong></p></div></div><div class="gallery-card"><img src="https://images.unsplash.com/photo-1516086749007-df0bc3c8b417?q=80&w=2940&auto=format&fit=crop" alt="Frevo" loading="lazy" onerror="this.onerror=null; this.src='../../../src/assets/styles/img/brasil1.png';"><div class="card-content"><p class="poppins-text" style="font-size: 1.1rem; margin:0;"><strong>Cultura: O calor do Frevo e do Carnaval</strong></p></div></div><div class="gallery-card"><img src="https://images.unsplash.com/photo-1588661621379-91ee0b938550?q=80&w=2940&auto=format&fit=crop" alt="Rendeira" loading="lazy" onerror="this.onerror=null; this.src='../../../src/assets/styles/img/brasil1.png';"><div class="card-content"><p class="poppins-text" style="font-size: 1.1rem; margin:0;"><strong>Pessoas: Tradição das Rendeiras e artesãos</strong></p></div></div></div></section><section class="render-anim"><div class="section-header"><h2>Exploração Cultural</h2></div><div class="grid-cards"><div class="recipe-card"><img src="https://images.unsplash.com/photo-1622268710574-1234cb30e1cc?auto=format&fit=crop&w=800&q=80" alt="Acarajé" loading="lazy" onerror="this.onerror=null; this.src='../../../src/assets/styles/img/brasil1.png';"><div class="card-content"><h3><i class="fa-solid fa-fire"></i> Acarajé</h3><div class="descricao">A mais emblemática comida de rua da bahia. Um bolinho crocante de feijão-fradinho prensado, frito no azeite de dendê. Recheado de vatapá e camarões...</div><a href="https://www.tudogostoso.com.br/busca?q=acaraje" target="_blank" class="btn"><i class="fa-solid fa-arrow-up-right-from-square"></i> Cultura Gastronômica</a></div></div><div class="recipe-card"><img src="https://images.unsplash.com/photo-1548405021-399cc11b22e1?auto=format&fit=crop&w=800&q=80" alt="Baião de Dois" loading="lazy" onerror="this.onerror=null; this.src='../../../src/assets/styles/img/brasil1.png';"><div class="card-content"><h3><i class="fa-solid fa-plate-wheat"></i> Baião de Dois</h3><div class="descricao">A mistura farta de arroz e feijão cozidos juntos de forma saborosa, onde se acresce queijo coalho e bastante carne seca.</div><a href="https://www.tudogostoso.com.br/busca?q=baiao+de+dois" target="_blank" class="btn"><i class="fa-solid fa-arrow-up-right-from-square"></i> Cultura Gastronômica</a></div></div><div class="recipe-card"><img src="https://images.unsplash.com/photo-1516086749007-df0bc3c8b417?auto=format&fit=crop&w=800&q=80" alt="Cajuína" loading="lazy" onerror="this.onerror=null; this.src='../../../src/assets/styles/img/brasil1.png';"><div class="card-content"><h3><i class="fa-solid fa-wine-bottle"></i> Cajuína</h3><div class="descricao">A Cajuína é uma bebida clara preparada do sumo depurado extraído livremente do caju. Representa a alma de Teresina no Piauí.</div><a href="https://www.tudogostoso.com.br/busca?q=cajuina" target="_blank" class="btn"><i class="fa-solid fa-arrow-up-right-from-square"></i> Explorar Item</a></div></div><div class="recipe-card"><img src="https://images.unsplash.com/photo-1548405021-399cc11b22e1?auto=format&fit=crop&w=800&q=80" alt="Capeta Drink" loading="lazy" onerror="this.onerror=null; this.src='../../../src/assets/styles/img/brasil1.png';"><div class="card-content"><h3><i class="fa-solid fa-martini-glass-citrus"></i> Capeta</h3><div class="descricao">Drink famoso de Porto Seguro: pó de guaraná, cachaça, leite condensado e gelo batidos.</div><a href="https://www.tudogostoso.com.br/busca?q=capeta" target="_blank" class="btn"><i class="fa-solid fa-arrow-up-right-from-square"></i> Explorar Item</a></div></div></div></section></main><footer style="margin-top: 4rem;"><div id="footer_items"><span id="copyright" style="display:block; text-align:center; padding: 30px; color: var(--text-muted); border-top: 1px solid rgba(0,0,0,0.05); font-family: var(--font-poppins);"> &copy 2025 Brasil In Cena - Experiência Visual </span></div></footer><script> // Navegação Sticky Imersiva Color Sync const header = document.querySelector('header'); window.addEventListener('scroll', () => { if (window.scrollY > 150) { header.classList.add('scrolled'); // Retorna texto do mainnav a cor forte original ou branca limpa } else { header.classList.remove('scrolled'); } }); // Init ScrollReveal para animacoes fluidas const sr = ScrollReveal({ distance: '60px', duration: 1000, easing: 'cubic-bezier(0.5, 0, 0, 1)', reset: false }); sr.reveal('.render-anim', { delay: 100, origin: 'bottom', scale: 0.98 }); sr.reveal('.render-anim-top', { delay: 100, origin: 'top', distance: '40px' }); // Cards entram em cena em série, suavemente sr.reveal('.stat-card', { interval: 150, origin: 'bottom', scale: 0.95 }); sr.reveal('.gallery-card', { interval: 200, origin: 'bottom', distance: '80px' }); sr.reveal('.recipe-card', { interval: 200, origin: 'bottom', scale: 0.95 }); sr.reveal('.hero-content', { delay: 400, origin: 'top', distance: '30px' }); sr.reveal('.section-header', { delay: 150, origin: 'left', distance: '40px' }); sr.reveal('.badge', { interval: 60, origin: 'bottom', scale: 0.8 }); </script><script src="../../../src/assets/styles/js/script.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Região Nordeste | Brasil in Cena</title>
+    <!-- CSS Relativo Consistente (Otimizado via root_path) -->
+    <link rel="stylesheet" href="../../../src/assets/styles/css/style.css">
+    
+    <!-- FontAwesome para icones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Modern Fonts: Poppins (Destaque) & Inter (Texto Básico) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Script de Animação de Entrada ScrollReveal -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <style>
+
+        :root {
+            --bg-color: #f7f9fc;
+            --text-main: #1a202c;
+            --text-muted: #4a5568;
+            --card-bg: #ffffff;
+            --font-inter: 'Inter', sans-serif;
+            --font-poppins: 'Poppins', sans-serif;
+            --tema-cor: #DD6B20;
+            --tema-cor-glass: #DD6B2033; /* 20% opacity */
+            --tema-cor-scrolled: #DD6B20F0; /* 94% opacity */
+        }
+
+        body {
+            font-family: var(--font-inter);
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* Títulos Globais e Elementos de Destaque */
+        h1, h2, h3, .poppins-text {
+            font-family: var(--font-poppins);
+        }
+
+        /* HEADER DYNAMIC OVERRIDE: Fixo, Invisivel até rolagem */
+        header { 
+            position: fixed !important;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000 !important; 
+            background-color: transparent !important;
+            transition: background-color 0.4s ease, backdrop-filter 0.4s ease, border-bottom 0.4s ease;
+            box-shadow: none !important;
+            border-bottom: 1px solid transparent;
+        }
+        
+        /* Links da Navbar na fase flutuante transparente */
+        #nav_list .nav-item a, #nav_logo {
+            color: #ffffff !important;
+            text-shadow: 0px 2px 4px rgba(0,0,0,0.5);
+            transition: color 0.3s;
+        }
+        
+        #nav_list .nav-item a:hover {
+            color: var(--tema-cor) !important;
+        }
+
+        header.scrolled {
+            background-color: var(--tema-cor-scrolled) !important;
+            backdrop-filter: blur(40px);
+            -webkit-backdrop-filter: blur(40px);
+            border-bottom: 1px solid rgba(255,255,255,0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important;
+        }
+
+        .hero {
+            position: relative;
+            height: 100vh; /* Full screen */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Efeito Parallax sutil */
+            color: white;
+            padding: 0 20px;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.9) 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            margin: 0.5rem 0;
+            letter-spacing: -2px;
+            text-transform: uppercase;
+        }
+        
+        .hero p {
+            font-size: 1.25rem;
+            color: rgba(255,255,255,0.85);
+        }
+
+        /* Layout Limits */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            position: relative;
+            z-index: 3;
+        }
+
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: -5rem; /* Sobe para cruzar a linha do Hero */
+        }
+
+        .stat-card {
+            background: var(--tema-cor);
+            padding: 1.5rem;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.1);
+            color: #ffffff;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-card i {
+            font-size: 2rem;
+            color: #ffffff; /* Simplificado minimalista */
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+
+        .stat-card h3 { margin: 0; font-size: 1rem; color: rgba(255,255,255,0.7); text-transform: uppercase; letter-spacing: 1px;}
+        .stat-card p { margin: 5px 0 0; font-weight: 700; font-size: 1.25rem; font-family: var(--font-inter); }
+
+
+        section {
+            margin: 5rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--text-main);
+        }
+        
+        .section-header h2 {
+            font-size: 2.5rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 4px;
+            background-color: var(--tema-cor);
+            bottom: -10px;
+            left: 25%;
+            border-radius: 2px;
+        }
+
+
+        .grid-triptych {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        /* Responsividade para Triptych */
+        @media (max-width: 900px) {
+            .grid-triptych {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .gallery-card {
+            background: #000;
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+            height: 600px;
+            cursor: pointer;
+        }
+
+        .gallery-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.6s ease, opacity 0.6s ease;
+            opacity: 0.85;
+        }
+
+        .gallery-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-card .card-content {
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+            color: white;
+            padding: 2rem 1.5rem 1.5rem 1.5rem;
+            transform: translateY(100%);
+            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            text-align: center;
+        }
+
+        .gallery-card:hover .card-content {
+            transform: translateY(0);
+        }
+
+
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+        
+        .recipe-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border: 1px solid rgba(0,0,0,0.03);
+            transition: transform 0.3s ease;
+        }
+        
+        .recipe-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .recipe-card img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+        }
+
+        .recipe-card .card-content {
+            padding: 2rem;
+        }
+        
+        .recipe-card h3 {
+            color: var(--tema-cor);
+            font-size: 1.4rem;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .recipe-card .descricao {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin: 1rem 0;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--tema-cor);
+            color: white;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            margin-top: 1rem;
+            font-weight: 600;
+            font-family: var(--font-poppins);
+            transition: opacity 0.2s, transform 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+            transform: scale(1.02);
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 */
+            height: 0;
+            overflow: hidden;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            border: 0;
+        }
+
+        /* Typography Conteudo Base */
+        .conteudo-base {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: justify;
+        }
+        
+        .conteudo-base p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-muted);
+        }
+
+
+        .badge-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+            margin-top: 1.5rem;
+        }
+
+        .badge {
+            background: transparent;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            color: var(--tema-cor);
+            font-weight: 600;
+            border: 2px solid var(--tema-cor);
+            font-family: var(--font-poppins);
+        }
+    </style>
+</head>
+<body>
+
+
+        <header>
+        <nav id="navbar">
+            <img src="../../../src/assets/styles/img/logoo.png" alt="Brasil In Cena" id="nav_logo">
+
+            <ul id="nav_list">
+                <li class="nav-item">
+                    <a href="../../../index.html">Início</a>
+                    <ul class="nav-menu">
+                        <li><a href="../../../src/assets/pages/sul.html">Região Sul</a></li>
+                        <li><a href="../../../src/assets/pages/norte.html">Região Norte</a></li>
+                        <li><a href="../../../src/assets/pages/centro-oeste.html">Região Centro-Oeste</a></li>
+                        <li><a href="../../../src/assets/pages/nordeste.html">Região Nordeste</a></li>
+                        <li><a href="../../../src/assets/pages/sudeste.html">Região Sudeste</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="../../../src/assets/pages/sobre.html">Sobre Nós</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../../../src/assets/pages/contato.html">Contato</a>
+                </li>
+            </ul>
+
+            <a href='../../../index.html#menu' class="btn-default-link"><button class="btn-default">Regiões</button></a>
+
+            <button id="mobile_btn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </nav>
+
+        <div id="mobile_menu">
+            <ul id="mobile_nav_list">
+                <li class="nav-item active">
+                    <a href="../../../index.html">Início</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../../../src/assets/pages/sobre.html">Sobre Nós</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../../../src/assets/pages/contato.html">Contato</a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+
+    <div class="hero render-anim-top" style="background-image: url('https://images.unsplash.com/photo-1581452684877-6262b9a7b93a?q=80&w=2940&auto=format&fit=crop');">
+        <div class="hero-content">
+            <p class="poppins-text" style="font-size: 1.2rem; text-transform: uppercase; letter-spacing: 2px; color: var(--tema-cor);">Conheça também a</p>
+            <h1>Região Nordeste</h1>
+            <p>Onde o Brasil nasceu. Terra de sol incessante, praias paradisíacas e uma resistência cultural expressa em cada batuque.</p>
+        </div>
+    </div>
+
+    <main class="container">
+
+        <section id="dashboard" class="dashboard-grid render-anim">
+            <div class="stat-card">
+                <i class="fa-solid fa-map"></i>
+                <h3>Estados</h3>
+                <p>9 Unidades</p>
+            </div>
+            <div class="stat-card">
+                <i class="fa-solid fa-cloud-sun"></i>
+                <h3>Clima Típico</h3>
+                <p>Tropical e Semiárido</p>
+            </div>
+            <div class="stat-card">
+                <i class="fa-solid fa-star"></i>
+                <h3>Destaque</h3>
+                <p>Maior extensão litorânea do país.</p>
+            </div>
+        </section>
+
+
+        <section class="render-anim conteudo-base">
+            <div class="section-header">
+                <h2>Saiba Mais</h2>
+            </div>
+            
+            
+                <div>
+                   
+                       <p>O Nordeste obteve importância vital na formação do Brasil colonial. Foi perto de Porto Seguro (BA) que a esquadra portuguesa de fato aportou, fundando o que seria o início do Brasil em 1500.</p>
+                   
+                       <p>A base de mão-de-obra escrava advinda da África solidificou uma mistura dolorosa que ergueu Salvador como primeira grande maravilha e capital, abarcando cultura iberica e indígena.</p>
+                   
+                </div>
+            
+
+            
+                <div style="margin-top: 2rem;">
+                   <h3 class="poppins-text" style="color: var(--text-main);">Geografia</h3>
+                   
+                       <h4 style="color: var(--tema-cor); margin-top: 1rem;">Clima</h4>
+                       
+                           <p>Tempos rigorosos de Seca marcam o Semiárido no Sertão (onde menos chove no Brasil). Porém, apresenta um clima Tropical litorâneo quente sem fim favorecendo os resorts.</p>
+                       
+                   
+                       <h4 style="color: var(--tema-cor); margin-top: 1rem;">Relevo</h4>
+                       
+                           <p>Destacam-se o Planalto da Borborema que age como barreira de chuvas provocando a seca nos sertões, as vastas depressões sertanejas, e falésias litorâneas exuberantes.</p>
+                       
+                   
+                       <h4 style="color: var(--tema-cor); margin-top: 1rem;">Vegetação</h4>
+                       
+                           <p>No litoral a resistente Mata Atlântica; cruzando pelo inóspito Agreste chegamos à Caatinga, adaptada para sobreviver guardando a pouca umidade provida.</p>
+                       
+                   
+                       <h4 style="color: var(--tema-cor); margin-top: 1rem;">Hidrografia</h4>
+                       
+                           <p>O Rio São Francisco é o rei e símbolo nordestino. Considerado o rio de integração nacional, é onde todos os ribeirinhos recorrem para o abastecimento.</p>
+                       
+                   
+                </div>
+            
+            
+            
+                <div style="margin-top: 2rem;">
+                   <h3 class="poppins-text" style="color: var(--text-main);">Cultura</h3>
+                   
+                       <p>Da Capoeira à rica Literatura de Cordel, passando pelas cantigas de repente: As tradições do berço nordestino exalam resistência e bom humor.</p>
+                   
+                       <p>Uma imensa musicalidade abençoou a região com Frevo, axé, maracatu aos românticos xotes e forrós pé-de-serra.</p>
+                   
+                </div>
+            
+            
+            
+                <div style="margin-top: 2rem;">
+                   <h3 class="poppins-text" style="color: var(--text-main);">Eventos Populares</h3>
+                   
+                       <p>As Festas Juninas (Campina Grande e Caruaru): Reúnem verdadeiras cidades de palha onde centenas de milhares celebram o maior São João do Mundo em ritmo inigualavelmente animado.</p>
+                   
+                       <p>Carnaval de Salvador e Olinda: A capital do axé contrasta com as ladeiras históricas de Olinda esbanjando um frevo de rua intenso.</p>
+                   
+                </div>
+            
+
+            <div class="mt-4" style="text-align: center;">
+                <h3 class="poppins-text" style="color: var(--text-main);">Estados Integrantes</h3>
+                <div class="badge-list">
+                    
+                        <span class="badge">Alagoas</span>
+                    
+                        <span class="badge">Bahia</span>
+                    
+                        <span class="badge">Ceará</span>
+                    
+                        <span class="badge">Maranhão</span>
+                    
+                        <span class="badge">Paraíba</span>
+                    
+                        <span class="badge">Pernambuco</span>
+                    
+                        <span class="badge">Piauí</span>
+                    
+                        <span class="badge">Rio Grande do Norte</span>
+                    
+                        <span class="badge">Sergipe</span>
+                    
+                </div>
+            </div>
+        </section>
+
+
+        
+        <section class="render-anim">
+            <div class="section-header">
+                <h2>Experiência Visual</h2>
+            </div>
+            <div class="grid-triptych">
+                
+                <div class="gallery-card">
+                    <img src="https://images.unsplash.com/photo-1581452684877-6262b9a7b93a?q=80&w=2940&auto=format&fit=crop" alt="Pelourinho" loading="lazy" onerror="this.onerror=null; this.src='../../../src/assets/styles/img/brasil1.png';">
+                    <div class="card-content">
+                        <p class="poppins-text" style="font-size: 1.1rem; margin:0;"><strong>Lugar: Arquitetura histórica do Pelourinho, Bahia</strong></p>
+                    </div>
+                </div>
+                
+                <div class="gallery-card">
+                    <img src="https://images.unsplash.com/photo-1516086749007-df0bc3c8b417?q=80&w=2940&auto=format&fit=crop" alt="Frevo" loading="lazy" onerror="this.onerror=null; this.src='../../../src/assets/styles/img/brasil1.png';">
+                    <div class="card-content">
+                        <p class="poppins-text" style="font-size: 1.1rem; margin:0;"><strong>Cultura: O calor do Frevo e do Carnaval</strong></p>
+                    </div>
+                </div>
+                
+                <div class="gallery-card">
+                    <img src="https://images.unsplash.com/photo-1588661621379-91ee0b938550?q=80&w=2940&auto=format&fit=crop" alt="Rendeira" loading="lazy" onerror="this.onerror=null; this.src='../../../src/assets/styles/img/brasil1.png';">
+                    <div class="card-content">
+                        <p class="poppins-text" style="font-size: 1.1rem; margin:0;"><strong>Pessoas: Tradição das Rendeiras e artesãos</strong></p>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+        
+
+
+        <section class="render-anim">
+            <div class="section-header">
+                <h2>Exploração Cultural</h2>
+            </div>
+            
+            
+                <div class="grid-cards">
+                    
+                    <div class="recipe-card">
+                        <img src="https://images.unsplash.com/photo-1622268710574-1234cb30e1cc?auto=format&fit=crop&w=800&q=80" alt="Acarajé" loading="lazy" onerror="this.onerror=null; this.src='../../../src/assets/styles/img/brasil1.png';">
+                        <div class="card-content">
+                            <h3><i class="fa-solid fa-fire"></i> Acarajé</h3>
+
+                            <div class="descricao">A mais emblemática comida de rua da bahia. Um bolinho crocante de feijão-fradinho prensado, frito no azeite de dendê. Recheado de vatapá e camarões...</div>
+                            
+                            
+                                <a href="https://www.tudogostoso.com.br/busca?q=acaraje" target="_blank" class="btn"><i class="fa-solid fa-arrow-up-right-from-square"></i> Cultura Gastronômica</a>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="recipe-card">
+                        <img src="https://images.unsplash.com/photo-1548405021-399cc11b22e1?auto=format&fit=crop&w=800&q=80" alt="Baião de Dois" loading="lazy" onerror="this.onerror=null; this.src='../../../src/assets/styles/img/brasil1.png';">
+                        <div class="card-content">
+                            <h3><i class="fa-solid fa-plate-wheat"></i> Baião de Dois</h3>
+
+                            <div class="descricao">A mistura farta de arroz e feijão cozidos juntos de forma saborosa, onde se acresce queijo coalho e bastante carne seca.</div>
+                            
+                            
+                                <a href="https://www.tudogostoso.com.br/busca?q=baiao+de+dois" target="_blank" class="btn"><i class="fa-solid fa-arrow-up-right-from-square"></i> Cultura Gastronômica</a>
+                            
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    <div class="recipe-card">
+                        <img src="https://images.unsplash.com/photo-1516086749007-df0bc3c8b417?auto=format&fit=crop&w=800&q=80" alt="Cajuína" loading="lazy" onerror="this.onerror=null; this.src='../../../src/assets/styles/img/brasil1.png';">
+                        <div class="card-content">
+                            <h3><i class="fa-solid fa-wine-bottle"></i> Cajuína</h3>
+                            <div class="descricao">A Cajuína é uma bebida clara preparada do sumo depurado extraído livremente do caju. Representa a alma de Teresina no Piauí.</div>
+                            
+                            
+                                <a href="https://www.tudogostoso.com.br/busca?q=cajuina" target="_blank" class="btn"><i class="fa-solid fa-arrow-up-right-from-square"></i> Explorar Item</a>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="recipe-card">
+                        <img src="https://images.unsplash.com/photo-1548405021-399cc11b22e1?auto=format&fit=crop&w=800&q=80" alt="Capeta Drink" loading="lazy" onerror="this.onerror=null; this.src='../../../src/assets/styles/img/brasil1.png';">
+                        <div class="card-content">
+                            <h3><i class="fa-solid fa-martini-glass-citrus"></i> Capeta</h3>
+                            <div class="descricao">Drink famoso de Porto Seguro: pó de guaraná, cachaça, leite condensado e gelo batidos.</div>
+                            
+                            
+                                <a href="https://www.tudogostoso.com.br/busca?q=capeta" target="_blank" class="btn"><i class="fa-solid fa-arrow-up-right-from-square"></i> Explorar Item</a>
+                            
+                        </div>
+                    </div>
+                    
+                </div>
+            
+        </section>
+
+
+        
+
+    </main>
+
+    <footer style="margin-top: 4rem;">
+        <div id="footer_items">
+            <span id="copyright" style="display:block; text-align:center; padding: 30px; color: var(--text-muted); border-top: 1px solid rgba(0,0,0,0.05); font-family: var(--font-poppins);">
+                &copy 2025 Brasil In Cena - Experiência Visual
+            </span>
+        </div>
+    </footer>
+
+    <script>
+        // Navegação Sticky Imersiva Color Sync
+        const header = document.querySelector('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 150) {
+                header.classList.add('scrolled');
+                // Retorna texto do mainnav a cor forte original ou branca limpa
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Init ScrollReveal para animacoes fluidas
+        const sr = ScrollReveal({
+            distance: '60px',
+            duration: 1000,
+            easing: 'cubic-bezier(0.5, 0, 0, 1)',
+            reset: false
+        });
+        
+        sr.reveal('.render-anim', { delay: 100, origin: 'bottom', scale: 0.98 });
+        sr.reveal('.render-anim-top', { delay: 100, origin: 'top', distance: '40px' });
+        // Cards entram em cena em série, suavemente
+        sr.reveal('.stat-card', { interval: 150, origin: 'bottom', scale: 0.95 });
+        sr.reveal('.gallery-card', { interval: 200, origin: 'bottom', distance: '80px' });
+        sr.reveal('.recipe-card', { interval: 200, origin: 'bottom', scale: 0.95 });
+        sr.reveal('.hero-content', { delay: 400, origin: 'top', distance: '30px' });
+        sr.reveal('.section-header', { delay: 150, origin: 'left', distance: '40px' });
+        sr.reveal('.badge', { interval: 60, origin: 'bottom', scale: 0.8 });
+    </script>
+    <script src="../../../src/assets/styles/js/script.js"></script>
+</body>
+</html>

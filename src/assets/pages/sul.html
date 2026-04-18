@@ -1,1 +1,665 @@
-<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Região Sul | Brasil in Cena</title><link rel="stylesheet" href="../../../src/assets/styles/css/style.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet"><script src="https://unpkg.com/scrollreveal"></script><style> /* Embed inline essentials para Fallback e Componentes UI */ :root { --bg-color: #f7f9fc; --text-main: #1a202c; --text-muted: #4a5568; --card-bg: #ffffff; --font-inter: 'Inter', sans-serif; --font-poppins: 'Poppins', sans-serif; --tema-cor: #2B6CB0; --tema-cor-glass: #2B6CB033; /* 20% opacity */ --tema-cor-scrolled: #2B6CB0F0; /* 94% opacity */ } body { font-family: var(--font-inter); background-color: var(--bg-color); color: var(--text-main); margin: 0; padding: 0; line-height: 1.6; } /* Títulos Globais e Elementos de Destaque */ h1, h2, h3, .poppins-text { font-family: var(--font-poppins); } /* HEADER DYNAMIC OVERRIDE: Fixo, Invisivel até rolagem */ header { position: fixed !important; top: 0; left: 0; width: 100%; z-index: 1000 !important; background-color: transparent !important; transition: background-color 0.4s ease, backdrop-filter 0.4s ease, border-bottom 0.4s ease; box-shadow: none !important; border-bottom: 1px solid transparent; } /* Links da Navbar na fase flutuante transparente */ #nav_list .nav-item a, #nav_logo { color: #ffffff !important; text-shadow: 0px 2px 4px rgba(0,0,0,0.5); transition: color 0.3s; } #nav_list .nav-item a:hover { color: var(--tema-cor) !important; } header.scrolled { background-color: var(--tema-cor-scrolled) !important; backdrop-filter: blur(40px); -webkit-backdrop-filter: blur(40px); border-bottom: 1px solid rgba(255,255,255,0.3); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important; } /* Hero 100vh Imersivo */ .hero { position: relative; height: 100vh; /* Documentário Full Screen */ display: flex; align-items: center; justify-content: center; text-align: center; background-size: cover; background-position: center; background-attachment: fixed; /* Efeito Parallax sutil */ color: white; padding: 0 20px; } .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.9) 100%); } .hero-content { position: relative; z-index: 2; max-width: 900px; } .hero h1 { font-size: 4.5rem; margin: 0.5rem 0; letter-spacing: -2px; text-transform: uppercase; } .hero p { font-size: 1.25rem; color: rgba(255,255,255,0.85); } /* Layout Limits */ .container { max-width: 1200px; margin: 0 auto; padding: 2rem; position: relative; z-index: 3; } /* Dashboard Insight com Glassmorphism Dinâmico */ .dashboard-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: -5rem; /* Sobe para cruzar a linha do Hero */ } .stat-card { background: var(--tema-cor); padding: 1.5rem; border-radius: 16px; box-shadow: 0 8px 32px rgba(0,0,0,0.15); text-align: center; border: 1px solid rgba(255,255,255,0.1); color: #ffffff; transition: transform 0.3s, box-shadow 0.3s; } .stat-card:hover { transform: translateY(-5px); } .stat-card i { font-size: 2rem; color: #ffffff; /* Simplificado minimalista */ margin-bottom: 1rem; opacity: 0.9; } .stat-card h3 { margin: 0; font-size: 1rem; color: rgba(255,255,255,0.7); text-transform: uppercase; letter-spacing: 1px;} .stat-card p { margin: 5px 0 0; font-weight: 700; font-size: 1.25rem; font-family: var(--font-inter); } /* Sections Globais */ section { margin: 5rem 0; } .section-header { text-align: center; margin-bottom: 3rem; color: var(--text-main); } .section-header h2 { font-size: 2.5rem; position: relative; display: inline-block; } .section-header h2::after { content: ''; position: absolute; width: 50%; height: 4px; background-color: var(--tema-cor); bottom: -10px; left: 25%; border-radius: 2px; } /* GALERIA TRIPTYCH VETICAL */ .grid-triptych { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; } /* Responsividade para Triptych */ @media (max-width: 900px) { .grid-triptych { grid-template-columns: 1fr; } } .gallery-card { background: #000; border-radius: 12px; overflow: hidden; position: relative; height: 600px; cursor: pointer; } .gallery-card img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.6s ease, opacity 0.6s ease; opacity: 0.85; } .gallery-card:hover img { transform: scale(1.05); } .gallery-card .card-content { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.9), transparent); color: white; padding: 2rem 1.5rem 1.5rem 1.5rem; transform: translateY(100%); transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); text-align: center; } .gallery-card:hover .card-content { transform: translateY(0); } /* Culinária Escaneável */ .grid-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; } .recipe-card { background: var(--card-bg); border-radius: 16px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 1px solid rgba(0,0,0,0.03); transition: transform 0.3s ease; } .recipe-card:hover { transform: translateY(-8px); } .recipe-card img { width: 100%; height: 240px; object-fit: cover; } .recipe-card .card-content { padding: 2rem; } .recipe-card h3 { color: var(--tema-cor); font-size: 1.4rem; margin-top: 0; display: flex; align-items: center; gap: 10px; } .recipe-card .descricao { color: var(--text-muted); font-size: 0.95rem; margin: 1rem 0; } .btn { display: inline-block; background: var(--tema-cor); color: white; text-decoration: none; padding: 12px 24px; border-radius: 8px; margin-top: 1rem; font-weight: 600; font-family: var(--font-poppins); transition: opacity 0.2s, transform 0.2s; border: none; cursor: pointer; } .btn:hover { opacity: 0.9; transform: scale(1.02); } .video-container { position: relative; padding-bottom: 56.25%; /* 16:9 */ height: 0; overflow: hidden; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); } .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; } /* Typography Conteudo Base */ .conteudo-base { max-width: 800px; margin: 0 auto; text-align: justify; } .conteudo-base p { font-size: 1.1rem; margin-bottom: 1.5rem; color: var(--text-muted); } /* Listas de Estados Minimalistas */ .badge-list { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 1.5rem; } .badge { background: transparent; padding: 8px 20px; border-radius: 30px; font-size: 0.9rem; color: var(--tema-cor); font-weight: 600; border: 2px solid var(--tema-cor); font-family: var(--font-poppins); } </style></head><body><header><nav id="navbar"><img loading="lazy" src="../../../src/assets/styles/img/logoo.png" alt="Brasil In Cena" id="nav_logo"><ul id="nav_list"><li class="nav-item"><a href="../../../index.html">Início</a><ul class="nav-menu"><li><a href="../../../src/assets/pages/sul.html">Região Sul</a></li><li><a href="../../../src/assets/pages/norte.html">Região Norte</a></li><li><a href="../../../src/assets/pages/centro-oeste.html">Região Centro-Oeste</a></li><li><a href="../../../src/assets/pages/nordeste.html">Região Nordeste</a></li><li><a href="../../../src/assets/pages/sudeste.html">Região Sudeste</a></li></ul></li><li class="nav-item"><a href="../../../src/assets/pages/sobre.html">Sobre Nós</a></li><li class="nav-item"><a href="../../../src/assets/pages/contato.html">Contato</a></li></ul><a href='../../../index.html#menu' class="btn-default-link"><button class="btn-default">Regiões</button></a><button id="mobile_btn"><i class="fa-solid fa-bars"></i></button></nav><div id="mobile_menu"><ul id="mobile_nav_list"><li class="nav-item active"><a href="../../../index.html">Início</a></li><li class="nav-item"><a href="../../../src/assets/pages/sobre.html">Sobre Nós</a></li><li class="nav-item"><a href="../../../src/assets/pages/contato.html">Contato</a></li></ul></div></header><div class="hero render-anim-top" style="background-image: url('https://images.unsplash.com/photo-1533596767520-2b15cf7eb9f7?q=80&w=2940&auto=format&fit=crop');"><div class="hero-content"><p class="poppins-text" style="font-size: 1.2rem; text-transform: uppercase; letter-spacing: 2px; color: var(--tema-cor);">Venha conhecer mais sobre a</p><h1>Região Sul</h1><p>Essa região tem como principal característica de ser a mais fria que temos no Brasil, o que atraiu muitos europeus durante a colonização.</p></div></div><main class="container"><section id="dashboard" class="dashboard-grid render-anim"><div class="stat-card"><i class="fa-solid fa-map"></i><h3>Estados</h3><p>3 Unidades</p></div><div class="stat-card"><i class="fa-solid fa-cloud-sun"></i><h3>Clima Típico</h3><p>Subtropical</p></div><div class="stat-card"><i class="fa-solid fa-star"></i><h3>Destaque</h3><p>Maior produtor de vinhos finos do Brasil</p></div></section><section class="render-anim conteudo-base"><div class="section-header"><h2>Saiba Mais</h2></div><div><p>A Região Sul foi colonizada principalmente por imigrantes europeus — alemães, italianos, poloneses e ucranianos — a partir do século XIX, o que moldou profundamente sua paisagem, arquitetura, gastronomia e costumes.</p><p>Antes deles, o território era habitado pelos povos Guarani, Kaingang e Xokleng.</p></div><div style="margin-top: 2rem;"><h3 class="poppins-text" style="color: var(--text-main);">Geografia</h3><h4 style="color: var(--tema-cor); margin-top: 1rem;">Clima</h4><p>O Sul é a única região do Brasil com quatro estações bem definidas. O inverno pode ser rigoroso — com neve em Urupema (SC), São Joaquim (SC) e nas altitudes do RS — e o verão é ameno nas serras e quente no litoral.</p><h4 style="color: var(--tema-cor); margin-top: 1rem;">Relevo</h4><p>O relevo é composto pelo Planalto Meridional (Planalto Basáltico das Araucárias), de onde surgem as serras gaúchas e catarinenses, e pela Planície Costeira, onde ficam as praias e lagoas. As Cataratas do Iguaçu, no Paraná, formam-se no encontro do Rio Iguaçu com o Rio Paraná — uma das maiores quedas d'água do planeta..</p><h4 style="color: var(--tema-cor); margin-top: 1rem;">Vegetação</h4><p>A Mata Atlântica cobre o litoral e as encostas serranas. Nos planaltos, a Floresta de Araucária (Mata das Araucárias) — com os icônicos pinheiros-do-paraná — é símbolo da região.</p><h4 style="color: var(--tema-cor); margin-top: 1rem;">Cataratas do Iguaçu</h4><p>No Parque Nacional do Iguaçu (PR), as Cataratas estendem-se por 2,7 km com 275 quedas d'água e até 82 metros de altura. Eleitas uma das 7 Maravilhas Naturais do Mundo em 2011, são Patrimônio Natural da Humanidade pela UNESCO.</p></div><div style="margin-top: 2rem;"><h3 class="poppins-text" style="color: var(--text-main);">Cultura</h3><p>A cultura sulista é marcada pelo orgulho das tradições gaúchas: o chimarrão compartilhado em roda, o churrasco gaúcho no espeto, as danças folclóricas (a chula, o vaneirão, a mazurca) e o trajes típicos com bombacha, poncho e lenço.</p><p>O CTG (Centro de Tradições Gaúchas) é a instituição que preserva e celebra essa identidade.</p></div><div style="margin-top: 2rem;"><h3 class="poppins-text" style="color: var(--text-main);">Eventos Populares</h3><p>A Oktoberfest de Blumenau (SC), realizada em outubro, é a maior festa de origem germânica das Américas. Fundada em 1984, atrai mais de 700 mil visitantes em 17 dias de cervejas artesanais, gastronomia típica, trajes bávaros e música ao vivo. A cidade se transforma em uma réplica animada da Bavária brasileira.</p><p>O Festival de Cinema de Gramado (RS), realizado desde 1973, é o mais antigo e prestado prêmio cinematográfico da América Latina. Por uma semana em agosto, as ruas arborizadas da Serra Gaúcha recebem os grandes nomes do cinema nacional e internacional — e a vitória no Kikito (o troféu do festival) é tão disputada quanto um Oscar brasileiro.</p></div><div class="mt-4" style="text-align: center;"><h3 class="poppins-text" style="color: var(--text-main);">Estados Integrantes</h3><div class="badge-list"><span class="badge">Paraná</span><span class="badge">Rio Grande do Sul</span><span class="badge">Santa Catarina</span></div></div></section><section class="render-anim"><div class="section-header"><h2>Experiência Visual</h2></div><div class="grid-triptych"><div class="gallery-card"><img src="https://images.unsplash.com/photo-1520625695029-7988365287f9?q=80&w=2940&auto=format&fit=crop" alt="Cataratas do Iguaçu, Paraná" loading="lazy" onerror="this.onerror=null; this.src='../../../src/assets/styles/img/brasil1.png';"><div class="card-content"><p class="poppins-text" style="font-size: 1.1rem; margin:0;"><strong>Lugar: As 275 quedas das Cataratas do Iguaçu</strong></p></div></div><div class="gallery-card"><img src="https://images.unsplash.com/photo-1562602833-0f4ab021375d?q=80&w=2940&auto=format&fit=crop" alt="Arquitetura Serra Gaúcha" loading="lazy" onerror="this.onerror=null; this.src='../../../src/assets/styles/img/brasil1.png';"><div class="card-content"><p class="poppins-text" style="font-size: 1.1rem; margin:0;"><strong>Cultura: Vinícolas de colonização europeia</strong></p></div></div><div class="gallery-card"><img src="https://images.unsplash.com/photo-1622268710574-1234cb30e1cc?q=80&w=2851&auto=format&fit=crop" alt="Chimarrão" loading="lazy" onerror="this.onerror=null; this.src='../../../src/assets/styles/img/brasil1.png';"><div class="card-content"><p class="poppins-text" style="font-size: 1.1rem; margin:0;"><strong>Experiência: Preparar e passar o Chimarrão</strong></p></div></div></div></section><section class="render-anim"><div class="section-header"><h2>Exploração Cultural</h2></div><div class="grid-cards"><div class="recipe-card"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Pastel_frito.jpg/800px-Pastel_frito.jpg" alt="Pastel de Berbigão" loading="lazy" onerror="this.onerror=null; this.src='../../../src/assets/styles/img/brasil1.png';"><div class="card-content"><h3><i class="fa-solid fa-utensils"></i> Pastel de Berbigão</h3><div class="descricao">O pastel de Berbigão é famoso na região de Laguna, no litoral sul do estado de Santa Catarina, e em Florianópolis. O berbigão é semelhante ao surur...</div><a href="https://www.tudogostoso.com.br/busca?q=pastel+de+berbigao" target="_blank" class="btn"><i class="fa-solid fa-arrow-up-right-from-square"></i> Cultura Gastronômica</a></div></div><div class="recipe-card"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Arroz_carreteiro.jpg/800px-Arroz_carreteiro.jpg" alt="Arroz Carreteiro" loading="lazy" onerror="this.onerror=null; this.src='../../../src/assets/styles/img/brasil1.png';"><div class="card-content"><h3><i class="fa-solid fa-bowl-food"></i> Arroz Carreteiro</h3><div class="descricao">É um prato típico da região sul que a cultura gaúcha adotou, com adaptações da culinária mineira e goiana. Refoga-se e cozinha o arroz com carne de...</div><a href="https://www.tudogostoso.com.br/busca?q=arroz+carreteiro" target="_blank" class="btn"><i class="fa-solid fa-arrow-up-right-from-square"></i> Cultura Gastronômica</a></div></div><div class="recipe-card"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Chimarrao.jpg/800px-Chimarrao.jpg" alt="Chimarrão" loading="lazy" onerror="this.onerror=null; this.src='../../../src/assets/styles/img/brasil1.png';"><div class="card-content"><h3><i class="fa-solid fa-wine-glass"></i> Chimarrão</h3><div class="descricao">O chimarrão, também conhecido como mate, é mais do que uma bebida no Sul do Brasil; é um símbolo de hospitalidade e comunhão. Feito a partir das fo...</div><a href="https://www.tudogostoso.com.br/busca?q=chimarrao" target="_blank" class="btn"><i class="fa-solid fa-arrow-up-right-from-square"></i> Explorar Item</a></div></div><div class="recipe-card"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Weizenbier.jpg/800px-Weizenbier.jpg" alt="Cerveja artesanal (Oktoberfest)" loading="lazy" onerror="this.onerror=null; this.src='../../../src/assets/styles/img/brasil1.png';"><div class="card-content"><h3><i class="fa-solid fa-beer-mug-empty"></i> Cerveja artesanal (Oktoberfest)</h3><div class="descricao">Santa Catarina é fortemente ligada à tradição cervejeira por conta da imigração alemã. A cerveja artesanal é a bebida símbolo das festas germânicas...</div><a href="https://www.tudogostoso.com.br/busca?q=cerveja+artesanal" target="_blank" class="btn"><i class="fa-solid fa-arrow-up-right-from-square"></i> Explorar Item</a></div></div></div></section><section class="render-anim"><div class="section-header"><h2>Documentário Expandido</h2></div><div class="video-container"><iframe src="https://www.youtube.com/embed/Bng0FAQmb-o" sandbox="allow-scripts allow-same-origin allow-presentation" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div></section></main><footer style="margin-top: 4rem;"><div id="footer_items"><span id="copyright" style="display:block; text-align:center; padding: 30px; color: var(--text-muted); border-top: 1px solid rgba(0,0,0,0.05); font-family: var(--font-poppins);"> &copy 2025 Brasil In Cena - Experiência Visual </span></div></footer><script> // Navegação Sticky Imersiva Color Sync const header = document.querySelector('header'); window.addEventListener('scroll', () => { if (window.scrollY > 150) { header.classList.add('scrolled'); // Retorna texto do mainnav a cor forte original ou branca limpa } else { header.classList.remove('scrolled'); } }); // Init ScrollReveal para animacoes fluidas const sr = ScrollReveal({ distance: '60px', duration: 1000, easing: 'cubic-bezier(0.5, 0, 0, 1)', reset: false }); sr.reveal('.render-anim', { delay: 100, origin: 'bottom', scale: 0.98 }); sr.reveal('.render-anim-top', { delay: 100, origin: 'top', distance: '40px' }); // Cards entram em cena em série, suavemente sr.reveal('.stat-card', { interval: 150, origin: 'bottom', scale: 0.95 }); sr.reveal('.gallery-card', { interval: 200, origin: 'bottom', distance: '80px' }); sr.reveal('.recipe-card', { interval: 200, origin: 'bottom', scale: 0.95 }); sr.reveal('.hero-content', { delay: 400, origin: 'top', distance: '30px' }); sr.reveal('.section-header', { delay: 150, origin: 'left', distance: '40px' }); sr.reveal('.badge', { interval: 60, origin: 'bottom', scale: 0.8 }); </script><script src="../../../src/assets/styles/js/script.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Região Sul | Brasil in Cena</title>
+    <!-- CSS Relativo Consistente (Otimizado via root_path) -->
+    <link rel="stylesheet" href="../../../src/assets/styles/css/style.css">
+    
+    <!-- FontAwesome para icones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Modern Fonts: Poppins (Destaque) & Inter (Texto Básico) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Script de Animação de Entrada ScrollReveal -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <style>
+
+        :root {
+            --bg-color: #f7f9fc;
+            --text-main: #1a202c;
+            --text-muted: #4a5568;
+            --card-bg: #ffffff;
+            --font-inter: 'Inter', sans-serif;
+            --font-poppins: 'Poppins', sans-serif;
+            --tema-cor: #2B6CB0;
+            --tema-cor-glass: #2B6CB033; /* 20% opacity */
+            --tema-cor-scrolled: #2B6CB0F0; /* 94% opacity */
+        }
+
+        body {
+            font-family: var(--font-inter);
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* Títulos Globais e Elementos de Destaque */
+        h1, h2, h3, .poppins-text {
+            font-family: var(--font-poppins);
+        }
+
+        /* HEADER DYNAMIC OVERRIDE: Fixo, Invisivel até rolagem */
+        header { 
+            position: fixed !important;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000 !important; 
+            background-color: transparent !important;
+            transition: background-color 0.4s ease, backdrop-filter 0.4s ease, border-bottom 0.4s ease;
+            box-shadow: none !important;
+            border-bottom: 1px solid transparent;
+        }
+        
+        /* Links da Navbar na fase flutuante transparente */
+        #nav_list .nav-item a, #nav_logo {
+            color: #ffffff !important;
+            text-shadow: 0px 2px 4px rgba(0,0,0,0.5);
+            transition: color 0.3s;
+        }
+        
+        #nav_list .nav-item a:hover {
+            color: var(--tema-cor) !important;
+        }
+
+        header.scrolled {
+            background-color: var(--tema-cor-scrolled) !important;
+            backdrop-filter: blur(40px);
+            -webkit-backdrop-filter: blur(40px);
+            border-bottom: 1px solid rgba(255,255,255,0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important;
+        }
+
+        .hero {
+            position: relative;
+            height: 100vh; /* Full screen */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Efeito Parallax sutil */
+            color: white;
+            padding: 0 20px;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.9) 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            margin: 0.5rem 0;
+            letter-spacing: -2px;
+            text-transform: uppercase;
+        }
+        
+        .hero p {
+            font-size: 1.25rem;
+            color: rgba(255,255,255,0.85);
+        }
+
+        /* Layout Limits */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            position: relative;
+            z-index: 3;
+        }
+
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: -5rem; /* Sobe para cruzar a linha do Hero */
+        }
+
+        .stat-card {
+            background: var(--tema-cor);
+            padding: 1.5rem;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.1);
+            color: #ffffff;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-card i {
+            font-size: 2rem;
+            color: #ffffff; /* Simplificado minimalista */
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+
+        .stat-card h3 { margin: 0; font-size: 1rem; color: rgba(255,255,255,0.7); text-transform: uppercase; letter-spacing: 1px;}
+        .stat-card p { margin: 5px 0 0; font-weight: 700; font-size: 1.25rem; font-family: var(--font-inter); }
+
+
+        section {
+            margin: 5rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--text-main);
+        }
+        
+        .section-header h2 {
+            font-size: 2.5rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 4px;
+            background-color: var(--tema-cor);
+            bottom: -10px;
+            left: 25%;
+            border-radius: 2px;
+        }
+
+
+        .grid-triptych {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        /* Responsividade para Triptych */
+        @media (max-width: 900px) {
+            .grid-triptych {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .gallery-card {
+            background: #000;
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+            height: 600px;
+            cursor: pointer;
+        }
+
+        .gallery-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.6s ease, opacity 0.6s ease;
+            opacity: 0.85;
+        }
+
+        .gallery-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-card .card-content {
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+            color: white;
+            padding: 2rem 1.5rem 1.5rem 1.5rem;
+            transform: translateY(100%);
+            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            text-align: center;
+        }
+
+        .gallery-card:hover .card-content {
+            transform: translateY(0);
+        }
+
+
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+        
+        .recipe-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border: 1px solid rgba(0,0,0,0.03);
+            transition: transform 0.3s ease;
+        }
+        
+        .recipe-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .recipe-card img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+        }
+
+        .recipe-card .card-content {
+            padding: 2rem;
+        }
+        
+        .recipe-card h3 {
+            color: var(--tema-cor);
+            font-size: 1.4rem;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .recipe-card .descricao {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin: 1rem 0;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--tema-cor);
+            color: white;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            margin-top: 1rem;
+            font-weight: 600;
+            font-family: var(--font-poppins);
+            transition: opacity 0.2s, transform 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+            transform: scale(1.02);
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 */
+            height: 0;
+            overflow: hidden;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            border: 0;
+        }
+
+        /* Typography Conteudo Base */
+        .conteudo-base {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: justify;
+        }
+        
+        .conteudo-base p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-muted);
+        }
+
+
+        .badge-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+            margin-top: 1.5rem;
+        }
+
+        .badge {
+            background: transparent;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            color: var(--tema-cor);
+            font-weight: 600;
+            border: 2px solid var(--tema-cor);
+            font-family: var(--font-poppins);
+        }
+    </style>
+</head>
+<body>
+
+
+        <header>
+        <nav id="navbar">
+            <img src="../../../src/assets/styles/img/logoo.png" alt="Brasil In Cena" id="nav_logo">
+
+            <ul id="nav_list">
+                <li class="nav-item">
+                    <a href="../../../index.html">Início</a>
+                    <ul class="nav-menu">
+                        <li><a href="../../../src/assets/pages/sul.html">Região Sul</a></li>
+                        <li><a href="../../../src/assets/pages/norte.html">Região Norte</a></li>
+                        <li><a href="../../../src/assets/pages/centro-oeste.html">Região Centro-Oeste</a></li>
+                        <li><a href="../../../src/assets/pages/nordeste.html">Região Nordeste</a></li>
+                        <li><a href="../../../src/assets/pages/sudeste.html">Região Sudeste</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="../../../src/assets/pages/sobre.html">Sobre Nós</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../../../src/assets/pages/contato.html">Contato</a>
+                </li>
+            </ul>
+
+            <a href='../../../index.html#menu' class="btn-default-link"><button class="btn-default">Regiões</button></a>
+
+            <button id="mobile_btn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </nav>
+
+        <div id="mobile_menu">
+            <ul id="mobile_nav_list">
+                <li class="nav-item active">
+                    <a href="../../../index.html">Início</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../../../src/assets/pages/sobre.html">Sobre Nós</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../../../src/assets/pages/contato.html">Contato</a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+
+    <div class="hero render-anim-top" style="background-image: url('https://images.unsplash.com/photo-1533596767520-2b15cf7eb9f7?q=80&w=2940&auto=format&fit=crop');">
+        <div class="hero-content">
+            <p class="poppins-text" style="font-size: 1.2rem; text-transform: uppercase; letter-spacing: 2px; color: var(--tema-cor);">Venha conhecer mais sobre a</p>
+            <h1>Região Sul</h1>
+            <p>Essa região tem como principal característica de ser a mais fria que temos no Brasil, o que atraiu muitos europeus durante a colonização.</p>
+        </div>
+    </div>
+
+    <main class="container">
+
+        <section id="dashboard" class="dashboard-grid render-anim">
+            <div class="stat-card">
+                <i class="fa-solid fa-map"></i>
+                <h3>Estados</h3>
+                <p>3 Unidades</p>
+            </div>
+            <div class="stat-card">
+                <i class="fa-solid fa-cloud-sun"></i>
+                <h3>Clima Típico</h3>
+                <p>Subtropical</p>
+            </div>
+            <div class="stat-card">
+                <i class="fa-solid fa-star"></i>
+                <h3>Destaque</h3>
+                <p>Maior produtor de vinhos finos do Brasil</p>
+            </div>
+        </section>
+
+
+        <section class="render-anim conteudo-base">
+            <div class="section-header">
+                <h2>Saiba Mais</h2>
+            </div>
+            
+            
+                <div>
+                   
+                       <p>A Região Sul foi colonizada principalmente por imigrantes europeus — alemães, italianos, poloneses e ucranianos — a partir do século XIX, o que moldou profundamente sua paisagem, arquitetura, gastronomia e costumes.</p>
+                   
+                       <p>Antes deles, o território era habitado pelos povos Guarani, Kaingang e Xokleng.</p>
+                   
+                </div>
+            
+
+            
+                <div style="margin-top: 2rem;">
+                   <h3 class="poppins-text" style="color: var(--text-main);">Geografia</h3>
+                   
+                       <h4 style="color: var(--tema-cor); margin-top: 1rem;">Clima</h4>
+                       
+                           <p>O Sul é a única região do Brasil com quatro estações bem definidas. O inverno pode ser rigoroso — com neve em Urupema (SC), São Joaquim (SC) e nas altitudes do RS — e o verão é ameno nas serras e quente no litoral.</p>
+                       
+                   
+                       <h4 style="color: var(--tema-cor); margin-top: 1rem;">Relevo</h4>
+                       
+                           <p>O relevo é composto pelo Planalto Meridional (Planalto Basáltico das Araucárias), de onde surgem as serras gaúchas e catarinenses, e pela Planície Costeira, onde ficam as praias e lagoas. As Cataratas do Iguaçu, no Paraná, formam-se no encontro do Rio Iguaçu com o Rio Paraná — uma das maiores quedas d'água do planeta..</p>
+                       
+                   
+                       <h4 style="color: var(--tema-cor); margin-top: 1rem;">Vegetação</h4>
+                       
+                           <p>A Mata Atlântica cobre o litoral e as encostas serranas. Nos planaltos, a Floresta de Araucária (Mata das Araucárias) — com os icônicos pinheiros-do-paraná — é símbolo da região.</p>
+                       
+                   
+                       <h4 style="color: var(--tema-cor); margin-top: 1rem;">Cataratas do Iguaçu</h4>
+                       
+                           <p>No Parque Nacional do Iguaçu (PR), as Cataratas estendem-se por 2,7 km com 275 quedas d'água e até 82 metros de altura. Eleitas uma das 7 Maravilhas Naturais do Mundo em 2011, são Patrimônio Natural da Humanidade pela UNESCO.</p>
+                       
+                   
+                </div>
+            
+            
+            
+                <div style="margin-top: 2rem;">
+                   <h3 class="poppins-text" style="color: var(--text-main);">Cultura</h3>
+                   
+                       <p>A cultura sulista é marcada pelo orgulho das tradições gaúchas: o chimarrão compartilhado em roda, o churrasco gaúcho no espeto, as danças folclóricas (a chula, o vaneirão, a mazurca) e o trajes típicos com bombacha, poncho e lenço.</p>
+                   
+                       <p>O CTG (Centro de Tradições Gaúchas) é a instituição que preserva e celebra essa identidade.</p>
+                   
+                </div>
+            
+            
+            
+                <div style="margin-top: 2rem;">
+                   <h3 class="poppins-text" style="color: var(--text-main);">Eventos Populares</h3>
+                   
+                       <p>A Oktoberfest de Blumenau (SC), realizada em outubro, é a maior festa de origem germânica das Américas. Fundada em 1984, atrai mais de 700 mil visitantes em 17 dias de cervejas artesanais, gastronomia típica, trajes bávaros e música ao vivo. A cidade se transforma em uma réplica animada da Bavária brasileira.</p>
+                   
+                       <p>O Festival de Cinema de Gramado (RS), realizado desde 1973, é o mais antigo e prestado prêmio cinematográfico da América Latina. Por uma semana em agosto, as ruas arborizadas da Serra Gaúcha recebem os grandes nomes do cinema nacional e internacional — e a vitória no Kikito (o troféu do festival) é tão disputada quanto um Oscar brasileiro.</p>
+                   
+                </div>
+            
+
+            <div class="mt-4" style="text-align: center;">
+                <h3 class="poppins-text" style="color: var(--text-main);">Estados Integrantes</h3>
+                <div class="badge-list">
+                    
+                        <span class="badge">Paraná</span>
+                    
+                        <span class="badge">Rio Grande do Sul</span>
+                    
+                        <span class="badge">Santa Catarina</span>
+                    
+                </div>
+            </div>
+        </section>
+
+
+        
+        <section class="render-anim">
+            <div class="section-header">
+                <h2>Experiência Visual</h2>
+            </div>
+            <div class="grid-triptych">
+                
+                <div class="gallery-card">
+                    <img src="https://images.unsplash.com/photo-1520625695029-7988365287f9?q=80&w=2940&auto=format&fit=crop" alt="Cataratas do Iguaçu, Paraná" loading="lazy" onerror="this.onerror=null; this.src='../../../src/assets/styles/img/brasil1.png';">
+                    <div class="card-content">
+                        <p class="poppins-text" style="font-size: 1.1rem; margin:0;"><strong>Lugar: As 275 quedas das Cataratas do Iguaçu</strong></p>
+                    </div>
+                </div>
+                
+                <div class="gallery-card">
+                    <img src="https://images.unsplash.com/photo-1562602833-0f4ab021375d?q=80&w=2940&auto=format&fit=crop" alt="Arquitetura Serra Gaúcha" loading="lazy" onerror="this.onerror=null; this.src='../../../src/assets/styles/img/brasil1.png';">
+                    <div class="card-content">
+                        <p class="poppins-text" style="font-size: 1.1rem; margin:0;"><strong>Cultura: Vinícolas de colonização europeia</strong></p>
+                    </div>
+                </div>
+                
+                <div class="gallery-card">
+                    <img src="https://images.unsplash.com/photo-1622268710574-1234cb30e1cc?q=80&w=2851&auto=format&fit=crop" alt="Chimarrão" loading="lazy" onerror="this.onerror=null; this.src='../../../src/assets/styles/img/brasil1.png';">
+                    <div class="card-content">
+                        <p class="poppins-text" style="font-size: 1.1rem; margin:0;"><strong>Experiência: Preparar e passar o Chimarrão</strong></p>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+        
+
+
+        <section class="render-anim">
+            <div class="section-header">
+                <h2>Exploração Cultural</h2>
+            </div>
+            
+            
+                <div class="grid-cards">
+                    
+                    <div class="recipe-card">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Pastel_frito.jpg/800px-Pastel_frito.jpg" alt="Pastel de Berbigão" loading="lazy" onerror="this.onerror=null; this.src='../../../src/assets/styles/img/brasil1.png';">
+                        <div class="card-content">
+                            <h3><i class="fa-solid fa-utensils"></i> Pastel de Berbigão</h3>
+
+                            <div class="descricao">O pastel de Berbigão é famoso na região de Laguna, no litoral sul do estado de Santa Catarina, e em Florianópolis. O berbigão é semelhante ao surur...</div>
+                            
+                            
+                                <a href="https://www.tudogostoso.com.br/busca?q=pastel+de+berbigao" target="_blank" class="btn"><i class="fa-solid fa-arrow-up-right-from-square"></i> Cultura Gastronômica</a>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="recipe-card">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Arroz_carreteiro.jpg/800px-Arroz_carreteiro.jpg" alt="Arroz Carreteiro" loading="lazy" onerror="this.onerror=null; this.src='../../../src/assets/styles/img/brasil1.png';">
+                        <div class="card-content">
+                            <h3><i class="fa-solid fa-bowl-food"></i> Arroz Carreteiro</h3>
+
+                            <div class="descricao">É um prato típico da região sul que a cultura gaúcha adotou, com adaptações da culinária mineira e goiana. Refoga-se e cozinha o arroz com carne de...</div>
+                            
+                            
+                                <a href="https://www.tudogostoso.com.br/busca?q=arroz+carreteiro" target="_blank" class="btn"><i class="fa-solid fa-arrow-up-right-from-square"></i> Cultura Gastronômica</a>
+                            
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    <div class="recipe-card">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Chimarrao.jpg/800px-Chimarrao.jpg" alt="Chimarrão" loading="lazy" onerror="this.onerror=null; this.src='../../../src/assets/styles/img/brasil1.png';">
+                        <div class="card-content">
+                            <h3><i class="fa-solid fa-wine-glass"></i> Chimarrão</h3>
+                            <div class="descricao">O chimarrão, também conhecido como mate, é mais do que uma bebida no Sul do Brasil; é um símbolo de hospitalidade e comunhão. Feito a partir das fo...</div>
+                            
+                            
+                                <a href="https://www.tudogostoso.com.br/busca?q=chimarrao" target="_blank" class="btn"><i class="fa-solid fa-arrow-up-right-from-square"></i> Explorar Item</a>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="recipe-card">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Weizenbier.jpg/800px-Weizenbier.jpg" alt="Cerveja artesanal (Oktoberfest)" loading="lazy" onerror="this.onerror=null; this.src='../../../src/assets/styles/img/brasil1.png';">
+                        <div class="card-content">
+                            <h3><i class="fa-solid fa-beer-mug-empty"></i> Cerveja artesanal (Oktoberfest)</h3>
+                            <div class="descricao">Santa Catarina é fortemente ligada à tradição cervejeira por conta da imigração alemã. A cerveja artesanal é a bebida símbolo das festas germânicas...</div>
+                            
+                            
+                                <a href="https://www.tudogostoso.com.br/busca?q=cerveja+artesanal" target="_blank" class="btn"><i class="fa-solid fa-arrow-up-right-from-square"></i> Explorar Item</a>
+                            
+                        </div>
+                    </div>
+                    
+                </div>
+            
+        </section>
+
+
+        
+        <section class="render-anim">
+            <div class="section-header">
+                <h2>Documentário Expandido</h2>
+            </div>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/Bng0FAQmb-o" 
+                        sandbox="allow-scripts allow-same-origin allow-presentation" 
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                </iframe>
+            </div>
+        </section>
+        
+
+    </main>
+
+    <footer style="margin-top: 4rem;">
+        <div id="footer_items">
+            <span id="copyright" style="display:block; text-align:center; padding: 30px; color: var(--text-muted); border-top: 1px solid rgba(0,0,0,0.05); font-family: var(--font-poppins);">
+                &copy 2025 Brasil In Cena - Experiência Visual
+            </span>
+        </div>
+    </footer>
+
+    <script>
+        // Navegação Sticky Imersiva Color Sync
+        const header = document.querySelector('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 150) {
+                header.classList.add('scrolled');
+                // Retorna texto do mainnav a cor forte original ou branca limpa
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Init ScrollReveal para animacoes fluidas
+        const sr = ScrollReveal({
+            distance: '60px',
+            duration: 1000,
+            easing: 'cubic-bezier(0.5, 0, 0, 1)',
+            reset: false
+        });
+        
+        sr.reveal('.render-anim', { delay: 100, origin: 'bottom', scale: 0.98 });
+        sr.reveal('.render-anim-top', { delay: 100, origin: 'top', distance: '40px' });
+        // Cards entram em cena em série, suavemente
+        sr.reveal('.stat-card', { interval: 150, origin: 'bottom', scale: 0.95 });
+        sr.reveal('.gallery-card', { interval: 200, origin: 'bottom', distance: '80px' });
+        sr.reveal('.recipe-card', { interval: 200, origin: 'bottom', scale: 0.95 });
+        sr.reveal('.hero-content', { delay: 400, origin: 'top', distance: '30px' });
+        sr.reveal('.section-header', { delay: 150, origin: 'left', distance: '40px' });
+        sr.reveal('.badge', { interval: 60, origin: 'bottom', scale: 0.8 });
+    </script>
+    <script src="../../../src/assets/styles/js/script.js"></script>
+</body>
+</html>
