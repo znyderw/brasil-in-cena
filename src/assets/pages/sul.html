@@ -1,9 +1,9 @@
 <!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Região Sul | Brasil in Cena</title><link rel="stylesheet" href="../../../src/assets/styles/css/style.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet"><script src="https://unpkg.com/scrollreveal"></script><style>
         :root {
-            --bg-color: #05070a;
-            --text-main: #f0f2f5;
-            --text-muted: #a0aec0;
-            --card-glass: #2B6CB020;
+            --bg-color: #f3f8ec;
+            --text-main: #1d1d1d;
+            --text-muted: #555c68;
+            --card-glass: rgba(255, 255, 255, 0.6);
             --font-outfit: 'Outfit', sans-serif;
             --font-poppins: 'Poppins', sans-serif;
             --tema-cor: #2B6CB0;
@@ -38,13 +38,13 @@
         }
 
         header.scrolled {
-            background: rgba(5, 7, 10, 0.8) !important;
+            background: rgba(243, 248, 236, 0.8) !important;
             backdrop-filter: blur(20px) saturate(180%);
             -webkit-backdrop-filter: blur(20px) saturate(180%);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
         }
 
-        /* Hero Section - National Geographic Style */
+        /* Hero Section Overlay - Keeping dark for readability */
         .hero {
             position: relative;
             height: 100vh;
@@ -63,7 +63,7 @@
             content: '';
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            background: linear-gradient(180deg, rgba(5, 7, 10, 0.4) 0%, rgba(5, 7, 10, 0.8) 50%, rgba(5, 7, 10, 1) 100%);
+            background: linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.6) 60%, var(--bg-color) 100%);
             z-index: 1;
         }
 
@@ -80,6 +80,7 @@
             letter-spacing: -2px;
             line-height: 1;
             text-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            color: white;
         }
 
         .hero p {
@@ -90,7 +91,7 @@
             margin: 1.5rem auto;
         }
 
-        /* Dashboard Stat Cards - Glassmorphism */
+        /* Dashboard Stat Cards - Glassmorphism Light */
         .container {
             max-width: 1300px;
             margin: 0 auto;
@@ -113,22 +114,22 @@
             padding: 2.5rem 1.5rem;
             border-radius: 24px;
             text-align: center;
-            border: 1px solid rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.8);
             transition: all 0.4s ease;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.06);
         }
 
         .stat-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-8px);
             border-color: var(--tema-cor);
-            box-shadow: 0 20px 50px var(--tema-cor-glow);
+            background: white;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
         }
 
         .stat-card i {
             font-size: 2.5rem;
             color: var(--tema-cor);
             margin-bottom: 1.5rem;
-            filter: drop-shadow(0 0 10px var(--tema-cor-glow));
         }
 
         .stat-card h3 { 
@@ -143,7 +144,7 @@
             margin: 10px 0 0; 
             font-weight: 800; 
             font-size: 1.5rem; 
-            color: #fff;
+            color: var(--text-main);
         }
 
         /* Section Styling */
@@ -161,21 +162,23 @@
             font-size: 3rem;
             margin: 0;
             line-height: 1;
+            color: var(--text-main);
         }
 
         /* Grid Triptych - Immersive Gallery */
         .grid-triptych {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 1rem;
+            gap: 1.2rem;
             height: 700px;
         }
 
         .gallery-card {
             position: relative;
             overflow: hidden;
-            border-radius: 16px;
+            border-radius: 20px;
             transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
 
         .gallery-card img {
@@ -192,7 +195,7 @@
         .gallery-card .card-content {
             position: absolute;
             bottom: 0; left: 0; right: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
             padding: 3rem 2rem 2rem;
             color: white;
             opacity: 0;
@@ -205,7 +208,7 @@
             transform: translateY(0);
         }
 
-        /* Culinary Cards - Glassmorphism */
+        /* Culinary Cards - Glassmorphism Light */
         .grid-cards {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
@@ -213,24 +216,24 @@
         }
 
         .recipe-card {
-            background: var(--card-glass);
-            backdrop-filter: blur(10px);
+            background: white;
             border-radius: 30px;
             overflow: hidden;
-            border: 1px solid rgba(255,255,255,0.05);
+            border: 1px solid rgba(0,0,0,0.03);
             transition: all 0.4s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.04);
         }
 
         .recipe-card:hover {
-            border-color: rgba(255,255,255,0.2);
-            background: rgba(255,255,255,0.05);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            border-color: var(--tema-cor);
         }
 
         .recipe-card img {
             width: 100%;
             height: 300px;
             object-fit: cover;
-            filter: saturate(1.2);
         }
 
         .recipe-card .card-content {
@@ -238,7 +241,7 @@
         }
 
         .recipe-card h3 {
-            color: #fff;
+            color: var(--text-main);
             font-size: 1.8rem;
             margin: 0 0 1rem 0;
         }
