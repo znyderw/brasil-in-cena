@@ -1,0 +1,164 @@
+
+
+#contato {
+    min-height: calc(100vh - 91px);
+    display: flex;
+    gap: 28px;
+    margin-bottom: 10%;
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: flex-start; 
+}
+
+
+
+.social-buttons-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 40px; 
+}
+
+
+
+
+.Btn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100px;
+  height: 100px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition-duration: 0.3s;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
+  background-color: var(--color-primary-5); 
+}
+
+.sign {
+  width: 100%;
+  transition-duration: 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sign svg {
+  width: 35px;
+  height: 35px;
+
+}
+
+.sign img {
+  width: 40px;
+  height: 40px;
+}
+
+
+
+
+.text {
+  position: absolute;
+  right: 0%;
+  width: 0%;
+  opacity: 0;
+  color: white;
+  font-size: 1.2em;
+  font-weight: 600;
+  transition-duration: 0.3s;
+  text-align: center;
+  
+}
+
+.Btn:hover {
+  width: 30%;
+  border-radius: 40px;
+  transition-duration: 0.3s;
+}
+
+.Btn:hover .sign {
+  width: 40%;
+  transition-duration: 0.3s;
+}
+
+.Btn:hover .text {
+  opacity: 1;
+  width: 75%;
+  transition-duration: 0.3s;
+  text-align: center;
+}
+
+.Btn:active {
+  transform: translate(2px, 2px);
+}
+
+
+
+.instagram-btn {
+    background-color: var(--color-primary-5); 
+}
+.instagram-btn:hover {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f09433', endColorstr='#bc1888', GradientType=1);
+  animation: bounce_613 0.4s linear;
+  box-shadow: 0px 0px 15px 5px rgba(234, 67, 53, 0.7); 
+}
+
+
+
+
+
+.tiktok-btn:hover {
+  background-color: #000000; 
+  box-shadow: 3px 3px 0px #00f2ea, -3px -3px 0px #ff0050; 
+  animation: bounce_613 0.4s linear; 
+}
+
+
+
+
+.gmail-btn:hover {
+  background: #202125;
+}
+
+
+
+
+
+
+
+
+@media screen and (max-width: 1170px) {
+    #contato {
+        min-height: 100%;
+        padding-top: 0px;
+    }
+
+    #banner,
+    #banner img,
+    #home .shape,
+    #brasil .shape-brasil  {
+        display: none;
+    }
+
+    #cta,
+    #br {
+        width: 100%;
+        text-align: center;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    #phone_button button {
+        display: none;
+    }
+}
+
+
+
+

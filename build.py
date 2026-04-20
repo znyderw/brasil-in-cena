@@ -1,6 +1,7 @@
 import json 
 import os
 import re
+import shutil
 from jinja2 import Environment, FileSystemLoader
 
 # Configurações de Diretórios
@@ -14,6 +15,19 @@ def minify_html(html_str):
 
 def gerar_site():
     print("🚀 Iniciando Build do Projeto 'Brasil In Cena'...")
+    
+    # 0. Sincronizar Assets Estáticos
+    assets_src = 'assets'
+    assets_dest = os.path.join(OUTPUT_ROOT, 'src', 'assets', 'styles')
+    
+    if os.path.exists(assets_src):
+        print(f"📦 Sincronizando assets de '{assets_src}'...")
+        if os.path.exists(assets_dest):
+            shutil.rmtree(assets_dest)
+        os.makedirs(os.path.dirname(assets_dest), exist_ok=True)
+        shutil.copytree(assets_src, assets_dest)
+    else:
+        print(f"⚠️ Aviso: Pasta de assets de origem '{assets_src}' não encontrada!")
     
     # Garantir que os diretórios de saída existem
     os.makedirs(OUTPUT_PAGES, exist_ok=True)

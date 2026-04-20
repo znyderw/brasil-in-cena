@@ -1,0 +1,76 @@
+
+
+
+
+#sobre {
+    min-height: calc(100vh - 91px);
+    display: flex;
+    position: relative;
+    padding: 0 5%;
+}
+
+.shape-sobre {
+    background-color: var(--color-primary-7);
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    border-radius: 100% 30% 0% 100%;
+    top: 0;
+    right: 0;
+    z-index: 1;
+}
+
+#nos {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    margin-top: 5%;
+}
+
+
+#banner-sobre {
+    display: flex;
+    align-items: start;
+    justify-content: flex-end;
+    width: 80%;
+    z-index: 2;
+    overflow: hidden;
+    position: relative;
+    border-radius: 100% 30% 0% 100% / 100% 30% 0% 100%; 
+}
+
+#banner-sobre img {
+    height: 50%;
+    width: fit-content;
+    object-fit: cover;
+
+}
+
+
+
+
+@media screen and (max-width: 1170px) {
+    #sobre {
+        min-height: 100%;
+        padding-top: 0px;
+    }
+
+    #banner-sobre,
+    #banner-sobre img,
+    #sobre .shape-sobre  {
+        display: none;
+    }
+
+    #nos {
+        width: 100%;
+        text-align: center;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    #phone_button button {
+        display: none;
+    }
+}
