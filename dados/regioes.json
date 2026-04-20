@@ -16,7 +16,7 @@
       "titulo_prefixo": "Venha conhecer mais sobre a",
       "titulo_destaque": "Região Sul",
       "descricao": "Essa região tem como principal característica de ser a mais fria que temos no Brasil, o que atraiu muitos europeus durante a colonização.",
-      "banner_url": "https://images.unsplash.com/photo-1533596767520-2b15cf7eb9f7?q=80&w=2940&auto=format&fit=crop"
+      "banner_url": "../../../src/assets/styles/img/brasil.png"
     },
     "galeria": [
       {
@@ -196,7 +196,7 @@
       "titulo_prefixo": "Conheça também a",
       "titulo_destaque": "Região Norte",
       "descricao": "A região mais selvagem e exuberante do país. O pulmão verde que conecta a imensidão da Floresta Amazônica com saberes milenares.",
-      "banner_url": "https://images.unsplash.com/photo-1581452684877-6262b9a7b93a?q=80&w=2940&auto=format&fit=crop"
+      "banner_url": "../../../src/assets/styles/img/brasil.png"
     },
     "galeria": [
       {
@@ -375,7 +375,7 @@
       "titulo_prefixo": "Conheça também a",
       "titulo_destaque": "Região Nordeste",
       "descricao": "Onde o Brasil nasceu. Terra de sol incessante, praias paradisíacas e uma resistência cultural expressa em cada batuque.",
-      "banner_url": "https://images.unsplash.com/photo-1581452684877-6262b9a7b93a?q=80&w=2940&auto=format&fit=crop"
+      "banner_url": "../../../src/assets/styles/img/brasil.png"
     },
     "galeria": [
       {
@@ -549,7 +549,7 @@
       "titulo_prefixo": "Conheça também a",
       "titulo_destaque": "Região Sudeste",
       "descricao": "A força motriz da nação. Um caldeirão cosmopolita onde marcos históricos, megacidades e litoral se encontram.",
-      "banner_url": "https://images.unsplash.com/photo-1548405021-399cc11b22e1?q=80&w=2940&auto=format&fit=crop"
+      "banner_url": "../../../src/assets/styles/img/brasil.png"
     },
     "galeria": [
       {
@@ -723,7 +723,7 @@
       "titulo_prefixo": "Conheça também a",
       "titulo_destaque": "Região Centro-Oeste",
       "descricao": "O coração do país. Região movida pelo agronegócio e berço do Pantanal, onde a natureza dita as regras do progresso.",
-      "banner_url": "https://images.unsplash.com/photo-1622268710574-1234cb30e1cc?q=80&w=2851&auto=format&fit=crop"
+      "banner_url": "../../../src/assets/styles/img/brasil.png"
     },
     "galeria": [
       {
