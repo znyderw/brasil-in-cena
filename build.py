@@ -4,19 +4,16 @@ import re
 import shutil
 from jinja2 import Environment, FileSystemLoader
 
-# Configurações de Diretórios
 TEMPLATE_DIR = 'dados'
 OUTPUT_ROOT = 'site'
 OUTPUT_PAGES = os.path.join(OUTPUT_ROOT, 'src', 'assets', 'pages')
 
 def minify_html(html_str):
-    """Remove espaços em branco desnecessários."""
     return re.sub(r'>\s+<', '><', html_str.strip())
 
 def gerar_site():
     print("🚀 Iniciando Build do Projeto 'Brasil In Cena'...")
     
-    # 0. Sincronizar Assets Estáticos
     assets_src = 'assets'
     assets_dest = os.path.join(OUTPUT_ROOT, 'src', 'assets', 'styles')
     
@@ -29,10 +26,8 @@ def gerar_site():
     else:
         print(f"⚠️ Aviso: Pasta de assets de origem '{assets_src}' não encontrada!")
     
-    # Garantir que os diretórios de saída existem
     os.makedirs(OUTPUT_PAGES, exist_ok=True)
     
-    # Carregar dados das regiões
     json_path = os.path.join(TEMPLATE_DIR, 'regioes.json')
     try:
         with open(json_path, 'r', encoding='utf-8') as f:
@@ -41,10 +36,8 @@ def gerar_site():
         print(f"❌ Erro ao carregar regioes.json: {e}")
         return
 
-    # Configurar Jinja2
     env = Environment(loader=FileSystemLoader(TEMPLATE_DIR, encoding='utf-8'))
     
-    # 1. Gerar Home (index.html) na raiz do site
     print("🏠 Gerando Home Page...")
     try:
         template_index = env.get_template('index.html')
@@ -56,12 +49,10 @@ def gerar_site():
     except Exception as e:
         print(f"❌ Erro ao gerar index.html: {e}")
 
-    # 2. Gerar Páginas de Regiões
     print("🗺️ Gerando Páginas Regionais...")
     template_regiao = env.get_template('base_regiao.html')
     for slug, info in dados_regioes.items():
         try:
-            # Caminho relativo para voltar à raiz a partir de src/assets/pages/
             html_final = template_regiao.render(regiao=info, root_path="../../../")
             html_final = minify_html(html_final)
             
@@ -72,7 +63,6 @@ def gerar_site():
         except Exception as e:
             print(f"❌ Erro ao gerar página da região {slug}: {e}")
 
-    # 3. Gerar Páginas Estáticas (Sobre, Contato)
     print("📄 Gerando Páginas Estáticas...")
     for page in ['sobre.html', 'contato.html']:
         try:
