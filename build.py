@@ -64,7 +64,7 @@ def gerar_site():
             print(f"❌ Erro ao gerar página da região {slug}: {e}")
 
     print("📄 Gerando Páginas Estáticas...")
-    for page in ['sobre.html', 'contato.html']:
+    for page in ['sobre.html', 'contato.html', 'qr.html']:
         try:
             template_page = env.get_template(page)
             html_page = template_page.render(root_path="../../../")
