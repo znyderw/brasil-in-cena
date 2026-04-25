@@ -18,13 +18,10 @@ def gerar_site():
     assets_dest = os.path.join(OUTPUT_ROOT, 'src', 'assets', 'styles')
     
     if os.path.exists(assets_src):
-        print(f"📦 Sincronizando assets de '{assets_src}'...")
         if os.path.exists(assets_dest):
             shutil.rmtree(assets_dest)
         os.makedirs(os.path.dirname(assets_dest), exist_ok=True)
         shutil.copytree(assets_src, assets_dest)
-    else:
-        print(f"⚠️ Aviso: Pasta de assets de origem '{assets_src}' não encontrada!")
     
     os.makedirs(OUTPUT_PAGES, exist_ok=True)
     
@@ -38,7 +35,6 @@ def gerar_site():
 
     env = Environment(loader=FileSystemLoader(TEMPLATE_DIR, encoding='utf-8'))
     
-    print("🏠 Gerando Home Page...")
     try:
         template_index = env.get_template('index.html')
         html_index = template_index.render(root_path="./")
@@ -49,7 +45,6 @@ def gerar_site():
     except Exception as e:
         print(f"❌ Erro ao gerar index.html: {e}")
 
-    print("🗺️ Gerando Páginas Regionais...")
     template_regiao = env.get_template('base_regiao.html')
     for slug, info in dados_regioes.items():
         try:
@@ -59,11 +54,9 @@ def gerar_site():
             file_path = os.path.join(OUTPUT_PAGES, f"{slug}.html")
             with open(file_path, "w", encoding='utf-8') as f:
                 f.write(html_final)
-            print(f"✅ Página [{info.get('nome', slug)}] gerada.")
         except Exception as e:
             print(f"❌ Erro ao gerar página da região {slug}: {e}")
 
-    print("📄 Gerando Páginas Estáticas...")
     for page in ['sobre.html', 'contato.html', 'qr.html']:
         try:
             template_page = env.get_template(page)

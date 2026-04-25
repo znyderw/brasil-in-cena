@@ -61,8 +61,8 @@
         }
 
         #qrcode {
-            width: 300px;
-            height: 300px;
+            width: 500px;
+            height: 500px;
         }
 
         #qrcode img {
@@ -87,7 +87,6 @@
             margin-top: 10px;
         }
 
-        /* Animated Background */
         .bg-glow {
             position: absolute;
             width: 100%;
@@ -186,14 +185,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
     <script>
         window.onload = function() {
-            const currentUrl = window.location.origin + window.location.pathname.split('/').slice(0, -4).join('/') + '/index.html';
-            // Fallback for local testing or unexpected paths
             const finalUrl = window.location.origin.includes('github.io') ? window.location.origin + '/brasil-in-cena/' : window.location.origin;
             
             new QRCode(document.getElementById("qrcode"), {
                 text: finalUrl,
-                width: 300,
-                height: 300,
+                width: 500,
+                height: 500,
                 colorDark : "#0f172a",
                 colorLight : "#ffffff",
                 correctLevel : QRCode.CorrectLevel.H
