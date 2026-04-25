@@ -1,16 +1,34 @@
 document.addEventListener('DOMContentLoaded', () => {
+    console.log('DOM Loaded - Initializing Mobile Menu');
     const mobileBtn = document.getElementById('mobile_btn');
-    if (mobileBtn) {
-        mobileBtn.addEventListener('click', () => {
-            const mobileMenu = document.getElementById('mobile_menu');
-            if (mobileMenu) mobileMenu.classList.toggle('active');
+    const mobileMenu = document.getElementById('mobile_menu');
+    const body = document.body;
+
+    if (mobileBtn && mobileMenu) {
+        console.log('Mobile elements found. Attaching listener...');
+        mobileBtn.addEventListener('click', (e) => {
+            console.log('Mobile button clicked');
+            e.preventDefault();
+            mobileBtn.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            body.classList.toggle('menu-open');
             
-            const icon = mobileBtn.querySelector('i');
-            if (icon) {
-                icon.classList.toggle('fa-bars');
-                icon.classList.toggle('fa-xmark');
-            }
+            const isActive = mobileMenu.classList.contains('active');
+            console.log('Menu state:', isActive ? 'Active' : 'Inactive');
         });
+
+        // Close menu when clicking a link
+        const menuLinks = mobileMenu.querySelectorAll('a');
+        menuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                console.log('Menu link clicked - Closing menu');
+                mobileBtn.classList.remove('active');
+                mobileMenu.classList.remove('active');
+                body.classList.remove('menu-open');
+            });
+        });
+    } else {
+        console.error('Mobile menu elements not found:', { mobileBtn, mobileMenu });
     }
 
     if (typeof ScrollReveal !== 'undefined') {

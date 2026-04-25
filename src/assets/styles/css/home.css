@@ -186,15 +186,11 @@
 @media screen and (max-width: 1170px) {
     #home, 
     #brasil {
-        min-height: 100%;
-        padding-top: 0px;
-    }
-
-    #banner,
-    #banner img,
-    #home .shape,
-    #brasil .shape-brasil  {
-        display: none;
+        min-height: auto;
+        padding: 40px 6%;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
     }
 
     #cta,
@@ -202,6 +198,38 @@
         width: 100%;
         text-align: center;
         align-items: center;
+        margin-top: 0;
+    }
+
+    #cta .title,
+    #br .title,
+    #brasil .title {
+        font-size: 2.5rem;
+        text-align: center;
+    }
+
+    #brasil .subtitle {
+        font-size: 2.5rem;
+    }
+
+    #banner,
+    #banner-brasil {
+        width: 100%;
+        justify-content: center;
+        margin-top: 30px;
+        order: 2;
+    }
+
+    #banner img,
+    #banner-brasil img {
+        max-height: 300px;
+        width: auto;
+        display: block;
+    }
+
+    #home .shape,
+    #brasil .shape-brasil  {
+        display: none;
     }
 }
 
