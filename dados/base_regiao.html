@@ -421,7 +421,7 @@
                     <img src="{{ p.imagem }}" alt="{{ p.nome }}" loading="lazy" onerror="this.onerror=null; this.src='{{ root_path }}src/assets/styles/img/brasil1.png';">
                     <div class="card-content">
                         <h3>{{ p.nome }}</h3>
-                        <p class="descricao">{{ p.descricao_html | striptags | truncate(150, true) }}</p>
+                        <p class="descricao">{{ p.descricao_html | striptags }}</p>
                         {% if p.link_receita %}
                             <a href="{{ p.link_receita }}" target="_blank" class="btn-glass">Ver Documentação</a>
                         {% endif %}
@@ -434,7 +434,7 @@
                     <img src="{{ p.imagem }}" alt="{{ p.nome }}" loading="lazy" onerror="this.onerror=null; this.src='{{ root_path }}src/assets/styles/img/brasil1.png';">
                     <div class="card-content">
                         <h3>{{ p.nome }}</h3>
-                        <p class="descricao">{{ p.descricao_html | striptags | truncate(150, true) }}</p>
+                        <p class="descricao">{{ p.descricao_html | striptags }}</p>
                         {% if p.link_receita %}
                             <a href="{{ p.link_receita }}" target="_blank" class="btn-glass">Explorar Sabor</a>
                         {% endif %}

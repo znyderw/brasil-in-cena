@@ -59,25 +59,3 @@
         </ul>
     </div>
 </div>
-
-<script>
-    (function () {
-        const btn = document.getElementById('mobile_btn');
-        const menu = document.getElementById('mobile_menu');
-        if (btn && menu) {
-            btn.onclick = function () {
-                btn.classList.toggle('active');
-                menu.classList.toggle('active');
-                document.body.classList.toggle('menu-open');
-            };
-            const links = menu.querySelectorAll('a');
-            links.forEach(function (l) {
-                l.onclick = function () {
-                    btn.classList.remove('active');
-                    menu.classList.remove('active');
-                    document.body.classList.remove('menu-open');
-                };
-            });
-        }
-    })();
-</script>
