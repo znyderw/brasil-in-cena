@@ -44,9 +44,6 @@ function instagram() {
     window.location.href = 'https:
 }
 
-function tiktok() {
-    window.location.href = 'https:
-}
 
 function gmail() {
     window.location.href = 'https:
