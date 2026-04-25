@@ -204,12 +204,14 @@
     #cta .title,
     #br .title,
     #brasil .title {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
         text-align: center;
+        line-height: 1.2;
     }
 
     #brasil .subtitle {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
+        line-height: 1.2;
     }
 
     #banner,
@@ -222,8 +224,9 @@
 
     #banner img,
     #banner-brasil img {
-        max-height: 300px;
+        max-height: 250px;
         width: auto;
+        max-width: 90%;
         display: block;
     }
 
