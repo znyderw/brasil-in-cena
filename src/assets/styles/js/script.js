@@ -1,11 +1,10 @@
-document.addEventListener('DOMContentLoaded', () => {
+const init = () => {
     const mobileBtn = document.getElementById('mobile_btn');
     const mobileMenu = document.getElementById('mobile_menu');
     const body = document.body;
 
     if (mobileBtn && mobileMenu) {
-        mobileBtn.addEventListener('click', (e) => {
-            e.preventDefault();
+        mobileBtn.addEventListener('click', () => {
             mobileBtn.classList.toggle('active');
             mobileMenu.classList.toggle('active');
             body.classList.toggle('menu-open');
@@ -28,12 +27,18 @@ document.addEventListener('DOMContentLoaded', () => {
         ScrollReveal().reveal('.dish', { origin: 'left', duration: 2000, distance: '20%' });
         ScrollReveal().reveal('#contato', { origin: 'left', duration: 1000, distance: '20%' });
     }
-});
+};
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+} else {
+    init();
+}
 
 function instagram() {
-    window.location.href = 'https://www.instagram.com/brasilincena_?igsh=cWczMTN2b2JhODBk&utm_source=qr';
+    window.open('https://www.instagram.com/brasilincena_?igsh=cWczMTN2b2JhODBk&utm_source=qr', '_blank');
 }
 
 function gmail() {
-    window.location.href = 'mailto:brasilincena@gmail.com';
+    window.open('mailto:brasilincena@gmail.com', '_blank');
 }
