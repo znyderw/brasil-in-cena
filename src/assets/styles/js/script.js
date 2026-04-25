@@ -1,34 +1,24 @@
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('DOM Loaded - Initializing Mobile Menu');
     const mobileBtn = document.getElementById('mobile_btn');
     const mobileMenu = document.getElementById('mobile_menu');
     const body = document.body;
 
     if (mobileBtn && mobileMenu) {
-        console.log('Mobile elements found. Attaching listener...');
         mobileBtn.addEventListener('click', (e) => {
-            console.log('Mobile button clicked');
             e.preventDefault();
             mobileBtn.classList.toggle('active');
             mobileMenu.classList.toggle('active');
             body.classList.toggle('menu-open');
-            
-            const isActive = mobileMenu.classList.contains('active');
-            console.log('Menu state:', isActive ? 'Active' : 'Inactive');
         });
 
-        // Close menu when clicking a link
         const menuLinks = mobileMenu.querySelectorAll('a');
         menuLinks.forEach(link => {
             link.addEventListener('click', () => {
-                console.log('Menu link clicked - Closing menu');
                 mobileBtn.classList.remove('active');
                 mobileMenu.classList.remove('active');
                 body.classList.remove('menu-open');
             });
         });
-    } else {
-        console.error('Mobile menu elements not found:', { mobileBtn, mobileMenu });
     }
 
     if (typeof ScrollReveal !== 'undefined') {
@@ -41,10 +31,9 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function instagram() {
-    window.location.href = 'https:
+    window.location.href = 'https://www.instagram.com/brasilincena_?igsh=cWczMTN2b2JhODBk&utm_source=qr';
 }
 
-
 function gmail() {
-    window.location.href = 'https:
+    window.location.href = 'mailto:brasilincena@gmail.com';
 }

@@ -1,24 +1,25 @@
-<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="./src/assets/styles/css/style.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"><script src="https://unpkg.com/scrollreveal"></script><title>Brasil in Cena</title></head><body><header id="main_header"><nav id="navbar"><img src="./src/assets/styles/img/logoo.png" alt="Brasil In Cena" id="nav_logo"><ul id="nav_list"><li class="nav-item"><a href="./index.html">Início</a><ul class="nav-menu"><li><a href="./src/assets/pages/sul.html">Região Sul</a></li><li><a href="./src/assets/pages/norte.html">Região Norte</a></li><li><a href="./src/assets/pages/centro-oeste.html">Região Centro-Oeste</a></li><li><a href="./src/assets/pages/nordeste.html">Região Nordeste</a></li><li><a href="./src/assets/pages/sudeste.html">Região Sudeste</a></li></ul></li><li class="nav-item"><a href="./src/assets/pages/sobre.html">Sobre Nós</a></li><li class="nav-item"><a href="./src/assets/pages/contato.html">Contato</a></li></ul><a href='./index.html#menu' class="btn-default-link"><button class="btn-default">Regiões</button></a><button id="mobile_btn" aria-label="Abrir Menu"><div class="burger-icon"><span></span><span></span><span></span></div></button></nav></header><div id="mobile_menu"><div id="mobile_menu_container"><ul id="mobile_nav_list"><li class="nav-item"><a href="./index.html">Início</a></li><li class="nav-item"><p class="menu-label">Regiões</p><ul class="mobile-sub-menu"><li><a href="./src/assets/pages/sul.html">Sul</a></li><li><a href="./src/assets/pages/norte.html">Norte</a></li><li><a href="./src/assets/pages/centro-oeste.html">Centro-Oeste</a></li><li><a href="./src/assets/pages/nordeste.html">Nordeste</a></li><li><a href="./src/assets/pages/sudeste.html">Sudeste</a></li></ul></li><li class="nav-item"><a href="./src/assets/pages/sobre.html">Sobre Nós</a></li><li class="nav-item"><a href="./src/assets/pages/contato.html">Contato</a></li></ul></div></div><script>
-        (function() {
-            const btn = document.getElementById('mobile_btn');
-            const menu = document.getElementById('mobile_menu');
-            if (btn && menu) {
-                btn.onclick = function() {
-                    btn.classList.toggle('active');
-                    menu.classList.toggle('active');
-                    document.body.classList.toggle('menu-open');
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="./src/assets/styles/css/style.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"><script src="https://unpkg.com/scrollreveal"></script><title>Brasil in Cena</title></head><body><header id="main_header"><nav id="navbar"><img src="./src/assets/styles/img/logoo.png" alt="Brasil In Cena" id="nav_logo"><ul id="nav_list"><li class="nav-item"><a href="./index.html">Início</a><ul class="nav-menu"><li><a href="./src/assets/pages/sul.html">Região Sul</a></li><li><a href="./src/assets/pages/norte.html">Região Norte</a></li><li><a href="./src/assets/pages/centro-oeste.html">Região Centro-Oeste</a></li><li><a href="./src/assets/pages/nordeste.html">Região Nordeste</a></li><li><a href="./src/assets/pages/sudeste.html">Região Sudeste</a></li></ul></li><li class="nav-item"><a href="./src/assets/pages/sobre.html">Sobre Nós</a></li><li class="nav-item"><a href="./src/assets/pages/contato.html">Contato</a></li></ul><a href='./index.html#menu' class="btn-default-link"><button
+                class="btn-default">Regiões</button></a><button id="mobile_btn" aria-label="Abrir Menu"><div class="burger-icon"><span></span><span></span><span></span></div></button></nav></header><div id="mobile_menu"><div id="mobile_menu_container"><ul id="mobile_nav_list"><li class="nav-item"><a href="./index.html">Início</a></li><li class="nav-item"><p class="menu-label">Regiões</p><ul class="mobile-sub-menu"><li><a href="./src/assets/pages/sul.html">Sul</a></li><li><a href="./src/assets/pages/norte.html">Norte</a></li><li><a href="./src/assets/pages/centro-oeste.html">Centro-Oeste</a></li><li><a href="./src/assets/pages/nordeste.html">Nordeste</a></li><li><a href="./src/assets/pages/sudeste.html">Sudeste</a></li></ul></li><li class="nav-item"><a href="./src/assets/pages/sobre.html">Sobre Nós</a></li><li class="nav-item"><a href="./src/assets/pages/contato.html">Contato</a></li></ul></div></div><script>
+    (function () {
+        const btn = document.getElementById('mobile_btn');
+        const menu = document.getElementById('mobile_menu');
+        if (btn && menu) {
+            btn.onclick = function () {
+                btn.classList.toggle('active');
+                menu.classList.toggle('active');
+                document.body.classList.toggle('menu-open');
+            };
+            const links = menu.querySelectorAll('a');
+            links.forEach(function (l) {
+                l.onclick = function () {
+                    btn.classList.remove('active');
+                    menu.classList.remove('active');
+                    document.body.classList.remove('menu-open');
                 };
-                const links = menu.querySelectorAll('a');
-                links.forEach(function(l) {
-                    l.onclick = function() {
-                        btn.classList.remove('active');
-                        menu.classList.remove('active');
-                        document.body.classList.remove('menu-open');
-                    };
-                });
-            }
-        })();
-    </script><main><section id="home"><div class="shape"></div><div id="cta"><h1 class="title">
+            });
+        }
+    })();
+</script><main><section id="home"><div class="shape"></div><div id="cta"><h1 class="title">
                     Venha conhecer mais sobre as
                     <span>regiões do Brasil</span></h1><p class="description">
                     Aqui você vai encontrar todo o conhecimento que todo brasileiro deveria ter a experiência de
